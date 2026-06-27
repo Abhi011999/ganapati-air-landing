@@ -79,7 +79,6 @@ const galleryImages = [
   { src: "/images/project/rooftop-pool-2.jpg",     label: "Infinity Pool" },
   { src: "/images/project/street-view-2.jpg",      label: "Street View" },
   { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
-  { src: "/images/project/park-sculpture.jpg",     label: "Landscaped Park" },
   { src: "/images/project/garden-landscape.jpg",   label: "Garden" },
   { src: "/images/project/clubhouse-exterior.jpg", label: "Clubhouse" },
   { src: "/images/project/sunken-seating.jpg",     label: "Sunken Seating" },
@@ -288,44 +287,55 @@ export default function LandingPage() {
       {/* 5. OPEN SPACE */}
       <section className="section openspace" id="openspace">
         <div className="wrap">
-          <div className="openspace__inner">
-            <div>
-              <div className="sec-header">
-                <span className="sec-tag reveal">Our Key Differentiator</span>
-                <h2 className="sec-title reveal-line"><span>Wide-open<br/>greens.</span></h2>
-                <p className="sec-body reveal">
-                  Most plotted developments in Bangalore use up to 55% of land as saleable plots.
-                  Ganapati AIR uses only 46%. That extra 9% is not sold — it stays as parks,
-                  green buffers, and open walkways for residents.
-                </p>
-                <p className="sec-body reveal" style={{ marginTop: 12 }}>
-                  More open land means more trees, better air, more privacy between villas,
-                  and a genuinely resort-like setting — not just on paper, but in daily life.
-                </p>
-              </div>
-              <div className="openspace__stat-line reveal">
-                <div className="openspace__stat-num">46%</div>
-                <div className="openspace__stat-label">actual plotted area vs 55% permitted</div>
-              </div>
-              <div className="openspace__green-panel reveal">
-                <div className="openspace__green-cell openspace__green-cell--built">
-                  <div className="openspace__green-cell-pct">55%</div>
-                  <div className="openspace__green-cell-label">Typical project</div>
-                  <div className="openspace__green-cell-note">Max saleable land used</div>
+          <div className="sec-header" style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
+            <span className="sec-tag reveal">Our Key Differentiator</span>
+            <h2 className="sec-title reveal-line" style={{ color: "var(--white)" }}><span>More green.<br/>Less concrete.</span></h2>
+            <p className="sec-body reveal" style={{ color: "rgba(250,250,248,0.6)", maxWidth: 520, margin: "0 auto" }}>
+              Most projects in Bangalore use up to 55% of land for saleable plots.
+              We use only 46% — so 54% of the entire project stays open, green, and breathable.
+            </p>
+          </div>
+
+          {/* Visual bar comparison */}
+          <div className="openspace__bars reveal">
+            <div className="openspace__bar-row">
+              <div className="openspace__bar-name">Typical Project</div>
+              <div className="openspace__bar-track">
+                <div className="openspace__bar-fill openspace__bar-fill--built" style={{ width: "55%" }}>
+                  <span>55% Built</span>
                 </div>
-                <div className="openspace__green-cell openspace__green-cell--open">
-                  <div className="openspace__green-cell-pct">46%</div>
-                  <div className="openspace__green-cell-label">Ganapati AIR</div>
-                  <div className="openspace__green-cell-note">9% more kept as open green space</div>
+                <div className="openspace__bar-fill openspace__bar-fill--green" style={{ width: "45%" }}>
+                  <span>45% Open</span>
                 </div>
-              </div>
-              <div className="openspace__pills reveal">
-                {["15 to 16% dedicated parks", "Lake buffer preserved", "Better privacy", "More greenery", "Better ventilation"].map((p) => (
-                  <span key={p} className="openspace__pill">{p}</span>
-                ))}
               </div>
             </div>
-            <OpenSpaceChart />
+            <div className="openspace__bar-row openspace__bar-row--air">
+              <div className="openspace__bar-name">Ganapati AIR</div>
+              <div className="openspace__bar-track">
+                <div className="openspace__bar-fill openspace__bar-fill--built" style={{ width: "46%" }}>
+                  <span>46% Built</span>
+                </div>
+                <div className="openspace__bar-fill openspace__bar-fill--green openspace__bar-fill--green-air" style={{ width: "54%" }}>
+                  <span>54% Open 🌿</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits row */}
+          <div className="openspace__benefits reveal">
+            {[
+              { icon: "🌳", title: "More Trees", desc: "15–16% of land dedicated to parks and green buffers" },
+              { icon: "🏞️", title: "Lake Buffer", desc: "Natural lake boundary preserved, no encroachment" },
+              { icon: "🏡", title: "More Privacy", desc: "Greater spacing between villas, less crowding" },
+              { icon: "🍃", title: "Fresh Air", desc: "Better natural ventilation across the entire layout" },
+            ].map((b) => (
+              <div key={b.title} className="openspace__benefit">
+                <div className="openspace__benefit-icon">{b.icon}</div>
+                <div className="openspace__benefit-title">{b.title}</div>
+                <div className="openspace__benefit-desc">{b.desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
