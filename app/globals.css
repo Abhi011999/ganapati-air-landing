@@ -1107,20 +1107,28 @@ h1,h2,h3,h4,h5,h6 {
    INVESTMENT CALCULATOR
    ================================================================ */
 .calc {
-  background: linear-gradient(160deg, var(--sage-dark) 0%, #2E5040 100%);
+  background: linear-gradient(140deg, #0D2318 0%, #163526 40%, #1A4030 100%);
   position: relative;
   overflow: hidden;
 }
 .calc::before {
   content: '';
   position: absolute;
-  top: -40%; right: -20%;
-  width: 70vw; height: 140%;
-  background: radial-gradient(ellipse at center, rgba(168,196,176,0.12) 0%, transparent 65%);
+  top: -30%; right: -10%;
+  width: 60vw; height: 120%;
+  background: radial-gradient(ellipse at center, rgba(100,180,130,0.18) 0%, transparent 60%);
   pointer-events: none;
 }
-.calc .sec-tag   { color: rgba(168,196,176,0.8); }
-.calc .sec-title { color: var(--white); }
+.calc::after {
+  content: '';
+  position: absolute;
+  bottom: -20%; left: -10%;
+  width: 50vw; height: 80%;
+  background: radial-gradient(ellipse at center, rgba(168,212,180,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.calc .sec-tag   { color: #7DCFA0; background: rgba(100,180,130,0.15); border-left-color: #7DCFA0; }
+.calc .sec-title { color: #F5F5F0; }
 .calc .sec-body  { color: rgba(250,250,248,0.55); }
 
 /* Two-column layout */
@@ -2491,3 +2499,79 @@ h1,h2,h3,h4,h5,h6 {
   .calc__result-num { font-size: clamp(20px, 7vw, 34px); }
   .calc__field-val { font-size: 18px; }
 }
+
+/* ================================================================
+   CALCULATOR — COLOUR LIFE INJECTION
+   ================================================================ */
+
+/* Compact wrapper — glassy border with glow */
+.calc__compact {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(100,200,140,0.2) !important;
+  box-shadow: 0 0 0 1px rgba(100,200,140,0.05), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Controls bg — warm tinted */
+.calc__controls {
+  background: rgba(255,255,255,0.02);
+}
+.calc__field-label {
+  color: #7DCFA0 !important;
+}
+.calc__field-val {
+  color: #A8F0C0 !important;
+}
+
+/* Occ buttons */
+.calc__occ-btn {
+  background: rgba(100,180,130,0.04) !important;
+  border-color: rgba(100,180,130,0.1) !important;
+}
+.calc__occ-btn:hover {
+  background: rgba(100,180,130,0.1) !important;
+  border-color: rgba(100,180,130,0.3) !important;
+}
+.calc__occ-btn.active {
+  background: rgba(100,180,130,0.18) !important;
+  border-color: rgba(100,200,140,0.5) !important;
+  border-left-color: #7DCFA0 !important;
+  box-shadow: inset 0 0 20px rgba(100,200,140,0.06);
+}
+.calc__occ-btn.active .calc__occ-pct { color: #C0F0D0 !important; }
+.calc__occ-btn.active .calc__occ-sub { color: rgba(192,240,208,0.65) !important; }
+.calc__occ-pct { color: rgba(250,250,248,0.45) !important; }
+
+/* Result cells */
+.calc__results-row {
+  background: rgba(0,0,0,0.15);
+}
+.calc__result-label { color: #7DCFA0 !important; }
+
+/* Annual income — warm cream */
+.calc__result-num {
+  color: #F5F0E4 !important;
+  text-shadow: 0 0 40px rgba(100,200,140,0.15);
+}
+/* Total return — vibrant teal */
+.calc__result-cell--accent .calc__result-num {
+  color: #7DDFA8 !important;
+  text-shadow: 0 0 40px rgba(100,220,150,0.3);
+}
+.calc__result-sub { color: rgba(200,240,210,0.35) !important; }
+
+/* Live bar — brighter */
+.calc__livebar { background: rgba(100,180,130,0.1) !important; }
+.calc__livebar-fill {
+  background: linear-gradient(90deg, #4CAF7D, #7DCFA0, #A8F0C0) !important;
+  box-shadow: 0 0 8px rgba(100,200,140,0.4);
+}
+
+/* Slider thumb — brighter green */
+.calc__slider::-webkit-slider-thumb {
+  background: #7DCFA0 !important;
+  box-shadow: 0 0 0 3px rgba(125,207,160,0.25) !important;
+}
+
+/* Divider */
+.calc__result-divider { background: rgba(100,200,140,0.12) !important; }
+.calc__disclaimer { color: rgba(168,212,180,0.25) !important; }
