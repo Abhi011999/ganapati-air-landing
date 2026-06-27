@@ -56,18 +56,19 @@ function OpenSpaceChart() {
 
 /* ── All 24 real project photos ── */
 const galleryImages = [
-  { src: "/images/project/arched-walkway.jpg",   label: "Arched Walkway" },
-  { src: "/images/project/townhouse-row.jpg",     label: "Villa Row" },
+  { src: "/images/project/arched-walkway.jpg",    label: "Arched Walkway" },
+  { src: "/images/project/street-view-2.jpg",     label: "Street View" },
   { src: "/images/project/clubhouse-exterior.jpg",label: "Clubhouse" },
-  { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
+  { src: "/images/project/aerial-masterplan.jpg",  label: "Aerial Master Plan" },
   { src: "/images/project/rooftop-pool-2.jpg",    label: "Infinity Pool" },
   { src: "/images/project/entrance-gate.jpg",     label: "Entrance Gate" },
-  { src: "/images/project/villa-row.jpg",         label: "Villa Exteriors" },
+  { src: "/images/project/townhouse-row.jpg",     label: "Villa Row" },
   { src: "/images/project/villa-exterior.jpg",    label: "Villa Exterior" },
   { src: "/images/project/entrance-arch.jpg",     label: "Entrance Arch" },
   { src: "/images/project/amphitheatre.jpg",      label: "Amphitheatre" },
-  { src: "/images/project/clubhouse.jpg",         label: "Clubhouse" },
-  { src: "/images/project/garden-landscape.jpg",  label: "Garden and Landscape" },
+  { src: "/images/project/park-sculpture.jpg",    label: "Landscaped Park" },
+  { src: "/images/project/clubhouse.jpg",         label: "Clubhouse Interior" },
+  { src: "/images/project/garden-landscape.jpg",  label: "Garden" },
   { src: "/images/project/landscape.jpg",         label: "Landscape" },
   { src: "/images/project/sunken-seating.jpg",    label: "Sunken Seating" },
   { src: "/images/project/rooftop-pool.jpg",      label: "Pool Deck" },
@@ -75,6 +76,7 @@ const galleryImages = [
   { src: "/images/project/bedroom-4.jpg",         label: "Bedroom" },
   { src: "/images/project/bedroom-2.jpg",         label: "Bedroom" },
   { src: "/images/project/bedroom-3.jpg",         label: "Bedroom Suite" },
+  { src: "/images/project/open-living.jpg",       label: "Living Area" },
   { src: "/images/project/loft-interior.jpg",     label: "Living Space" },
   { src: "/images/project/living-room.jpg",       label: "Interior" },
   { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
@@ -82,7 +84,8 @@ const galleryImages = [
   { src: "/images/project/powder-room.jpg",       label: "Powder Room" },
   { src: "/images/project/driveway.jpg",          label: "Driveway" },
   { src: "/images/project/driveway-2.jpg",        label: "Driveway" },
-  { src: "/images/project/street-walkway.jpg",    label: "Street View" },
+  { src: "/images/project/street-walkway.jpg",    label: "Walkway" },
+  { src: "/images/project/villa-row.jpg",         label: "Villa Exteriors" },
 ];
 
 export default function LandingPage() {
