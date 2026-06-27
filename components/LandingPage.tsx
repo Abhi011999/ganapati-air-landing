@@ -502,12 +502,6 @@ export default function LandingPage() {
             </div>
           </div>
           <div>
-            <div className="footer__col-title">Contact</div>
-            <div className="footer__col-item"><a href="tel:+919353742442">+91 93537 42442</a></div>
-            <div className="footer__col-item">FPMJ+953, Kavaranahalli,<br />Karnataka 562101</div>
-            <div className="footer__col-item"><a href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA" target="_blank" rel="noopener noreferrer">View on Google Maps</a></div>
-          </div>
-          <div>
             <div className="footer__col-title">Project</div>
             <div className="footer__col-item">56 Managed Villas</div>
             <div className="footer__col-item">2 BHK with Private Pool</div>

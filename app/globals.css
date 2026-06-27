@@ -831,7 +831,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .footer__inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: clamp(32px, 5vw, 80px);
   padding: 0 var(--pad);
   margin-bottom: clamp(32px, 4vw, 56px);
@@ -976,7 +976,6 @@ h1,h2,h3,h4,h5,h6 {
   .gallery__item { aspect-ratio: unset; min-height: 220px; }
   .gallery__item:nth-child(5) { grid-row: auto; }
   .footer__inner { grid-template-columns: 1fr; gap: 28px; }
-  .footer__bottom { flex-direction: column; gap: 12px; }
   .openspace__chart { height: 180px; gap: 16px; }
   .openspace__bar-group { width: 70px; }
   .openspace__stat-num { font-size: clamp(40px, 12vw, 72px); }
