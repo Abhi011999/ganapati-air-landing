@@ -277,15 +277,30 @@ export default function LandingPage() {
                 <span className="sec-tag reveal">Our Key Differentiator</span>
                 <h2 className="sec-title reveal-line"><span>Wide-open<br/>greens.</span></h2>
                 <p className="sec-body reveal">
-                  In Bangalore, plotted developments are typically permitted to use up to 55% of
-                  land as saleable area. Ganapati AIR is plotted at just 46%, well below
-                  the permissible limit. The remaining land, including the lake buffer and
-                  setbacks, is preserved as open and green space.
+                  Most plotted developments in Bangalore use up to 55% of land as saleable plots.
+                  Ganapati AIR uses only 46%. That extra 9% is not sold — it stays as parks,
+                  green buffers, and open walkways for residents.
+                </p>
+                <p className="sec-body reveal" style={{ marginTop: 12 }}>
+                  More open land means more trees, better air, more privacy between villas,
+                  and a genuinely resort-like setting — not just on paper, but in daily life.
                 </p>
               </div>
               <div className="openspace__stat-line reveal">
                 <div className="openspace__stat-num">46%</div>
                 <div className="openspace__stat-label">actual plotted area vs 55% permitted</div>
+              </div>
+              <div className="openspace__green-panel reveal">
+                <div className="openspace__green-cell openspace__green-cell--built">
+                  <div className="openspace__green-cell-pct">55%</div>
+                  <div className="openspace__green-cell-label">Typical project</div>
+                  <div className="openspace__green-cell-note">Max saleable land used</div>
+                </div>
+                <div className="openspace__green-cell openspace__green-cell--open">
+                  <div className="openspace__green-cell-pct">46%</div>
+                  <div className="openspace__green-cell-label">Ganapati AIR</div>
+                  <div className="openspace__green-cell-note">9% more kept as open green space</div>
+                </div>
               </div>
               <div className="openspace__pills reveal">
                 {["15 to 16% dedicated parks", "Lake buffer preserved", "Better privacy", "More greenery", "Better ventilation"].map((p) => (
@@ -498,13 +513,11 @@ export default function LandingPage() {
             </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>
-            <div className="footer__rera">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 8 6.5 11.5 13 5"/></svg>
-              RERA Reg. No.: PRM/KA/RERA/1254/460/PR/161225/008340
+            <div className="footer__rera-badge">
+              <div className="footer__rera-badge-label">RERA Approved</div>
+              <div className="footer__rera-badge-num">PRM/KA/RERA/1254/460/PR/161225/008340</div>
             </div>
-            <div className="footer__phone">
-              <span>+91 93537 42442</span>
-            </div>
+
           </div>
           <div>
             <div className="footer__col-title">Project</div>
