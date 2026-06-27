@@ -72,7 +72,38 @@ export default function Calculator() {
 
         <div className="calc__shell reveal">
 
-          {/* ── Top: controls ── */}
+          {/* ── RESULTS (always on top — visible while dragging) ── */}
+          <div className="calc__results-row">
+
+            <div className="calc__result-cell">
+              <div className="calc__result-label">Annual income</div>
+              <div className="calc__result-num">
+                <LiveNumber value={annual} fmt={fmtVal} />
+              </div>
+              <div className="calc__result-sub">{yieldPct.toFixed(1)}% rental yield</div>
+            </div>
+
+            <div className="calc__result-vdivider" />
+
+            <div className="calc__result-cell calc__result-cell--accent">
+              <div className="calc__result-label">Total over {years} yrs</div>
+              <div className="calc__result-num">
+                <LiveNumber value={totalReturn} fmt={fmtVal} />
+              </div>
+              <div className="calc__result-sub">income + capital growth</div>
+            </div>
+
+          </div>
+
+          {/* ── Live yield bar ── */}
+          <div className="calc__livebar">
+            <div className="calc__livebar-fill" style={{ width: `${Math.min((yieldPct / 15) * 100, 100)}%` }} />
+          </div>
+
+          {/* ── Divider ── */}
+          <div className="calc__hdivider" />
+
+          {/* ── CONTROLS (below results) ── */}
           <div className="calc__controls">
 
             {/* Occupancy */}
@@ -108,37 +139,6 @@ export default function Calculator() {
               <div className="calc__range-labels"><span>3</span><span>15</span></div>
             </div>
 
-          </div>
-
-          {/* ── Divider ── */}
-          <div className="calc__hdivider" />
-
-          {/* ── Bottom: results ── */}
-          <div className="calc__results-row">
-
-            <div className="calc__result-cell">
-              <div className="calc__result-label">Annual income</div>
-              <div className="calc__result-num">
-                <LiveNumber value={annual} fmt={fmtVal} />
-              </div>
-              <div className="calc__result-sub">{yieldPct.toFixed(1)}% rental yield</div>
-            </div>
-
-            <div className="calc__result-vdivider" />
-
-            <div className="calc__result-cell calc__result-cell--accent">
-              <div className="calc__result-label">Total over {years} yrs</div>
-              <div className="calc__result-num">
-                <LiveNumber value={totalReturn} fmt={fmtVal} />
-              </div>
-              <div className="calc__result-sub">income + capital growth</div>
-            </div>
-
-          </div>
-
-          {/* ── Live yield bar ── */}
-          <div className="calc__livebar">
-            <div className="calc__livebar-fill" style={{ width: `${Math.min((yieldPct / 15) * 100, 100)}%` }} />
           </div>
 
         </div>

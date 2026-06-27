@@ -2901,3 +2901,48 @@ h1,h2,h3,h4,h5,h6 {
 .hero__subtitle { color: rgba(255,255,255,0.88) !important; text-shadow: 0 1px 20px rgba(0,0,0,0.5) !important; }
 .hero__desc     { color: rgba(255,255,255,0.7)  !important; }
 .hero__chip     { color: rgba(255,255,255,0.82) !important; }
+
+/* ================================================================
+   CALCULATOR MOBILE — results on top, controls below, one screen
+   ================================================================ */
+@media (max-width: 600px) {
+  .calc__shell { border-radius: 0; }
+
+  /* Results row — stays side by side, top of shell */
+  .calc__results-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1px 1fr !important;
+  }
+  .calc__result-cell { padding: 16px 14px !important; }
+  .calc__result-label { font-size: 9px !important; margin-bottom: 6px !important; }
+  .calc__result-num { font-size: clamp(20px, 6.5vw, 32px) !important; margin-bottom: 4px !important; }
+  .calc__result-sub { font-size: 10px !important; }
+
+  /* Controls — stack below */
+  .calc__controls { grid-template-columns: 1fr !important; }
+  .calc__field { padding: 14px 14px !important; }
+  .calc__field:first-child {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(100,200,140,0.12) !important;
+  }
+  .calc__field-label { font-size: 9px !important; margin-bottom: 10px !important; }
+
+  /* Occ buttons — horizontal row on mobile */
+  .calc__occ-row { flex-direction: row !important; gap: 6px !important; }
+  .calc__occ-btn { flex: 1; flex-direction: column !important; align-items: center !important; justify-content: center !important; padding: 8px 6px !important; gap: 3px; }
+  .calc__occ-pct { font-size: 17px !important; }
+  .calc__occ-sub { font-size: 9px !important; text-align: center; }
+
+  /* Horizon — compact */
+  .calc__horizon-big { margin-bottom: 10px !important; }
+  .calc__horizon-num { font-size: clamp(36px, 10vw, 52px) !important; }
+  .calc__horizon-unit { font-size: 14px !important; }
+  .calc__range-labels { font-size: 9px !important; }
+
+  /* Nature line compact */
+  .calc__nature-line { font-size: 11px !important; }
+
+  /* Footer */
+  .calc__footer { flex-direction: row !important; align-items: center !important; gap: 10px !important; flex-wrap: wrap; margin-top: 10px !important; }
+  .calc__disclaimer { font-size: 10px !important; }
+}
