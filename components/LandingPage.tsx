@@ -18,6 +18,23 @@ function useReveal() {
   }, []);
 }
 
+function useScrollNav() {
+  useEffect(() => {
+    const nav = document.querySelector<HTMLElement>(".nav");
+    if (!nav) return;
+    const onScroll = () => {
+      if (window.scrollY > 60) {
+        nav.classList.add("nav--scrolled");
+      } else {
+        nav.classList.remove("nav--scrolled");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+}
+
 function OpenSpaceChart() {
   const [on, setOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -80,6 +97,7 @@ const galleryImages = [
 
 export default function LandingPage() {
   useReveal();
+  useScrollNav();
 
   return (
     <>

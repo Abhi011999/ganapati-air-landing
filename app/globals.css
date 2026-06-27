@@ -154,7 +154,7 @@ h1,h2,h3,h4,h5,h6 {
   z-index: 0;
 }
 .hero__bg img {
-  animation: heroBgZoom 8s ease forwards;
+  /* no animation — static image */
 }
 .hero__overlay {
   position: absolute;
