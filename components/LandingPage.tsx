@@ -522,6 +522,10 @@ export default function LandingPage() {
           </p>
           <div className="footer__coming-soon">Brochure Coming Soon</div>
         </div>
+        <div className="footer__credit">
+          <span>2026 Developed by</span>
+          <a href="https://socialmusketeers.in" target="_blank" rel="noopener noreferrer">socialmusketeers.in</a>
+        </div>
       </footer>
     </>
   );

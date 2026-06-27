@@ -897,6 +897,24 @@ h1,h2,h3,h4,h5,h6 {
   white-space: nowrap;
 }
 
+.footer__credit {
+  padding: 16px var(--pad);
+  border-top: 1px solid var(--sand-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--stone);
+  letter-spacing: 0.06em;
+}
+.footer__credit a {
+  color: var(--sage-dark);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+.footer__credit a:hover { color: var(--sage); }
+
 /* ----------------------------------------------------------------
    RESPONSIVE
    ---------------------------------------------------------------- */
