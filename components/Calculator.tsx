@@ -30,19 +30,43 @@ export default function Calculator() {
   return (
     <section className="section calc" id="calculator">
       <div className="wrap">
-        <div className="calc__inner">
-          <div className="calc__left">
-            <span className="sec-tag reveal">Returns Calculator</span>
-            <h2 className="sec-title reveal-line" style={{ marginTop: 12 }}><span>Run<br/>the numbers.</span></h2>
-            <p className="sec-body reveal" style={{ marginTop: 16 }}>
-              Based on Rs. 21,000 avg nightly rate, 50/50 revenue split, 10% annual appreciation.
-            </p>
+        {/* Header */}
+        <div className="calc__header">
+          <span className="sec-tag reveal">Returns Calculator</span>
+          <h2 className="sec-title reveal-line" style={{ marginTop: 12 }}><span>Run<br/>the numbers.</span></h2>
+          <p className="sec-body reveal" style={{ marginTop: 16 }}>
+            Based on Rs. 21,000 avg nightly rate, 50/50 revenue split, 10% annual appreciation.
+          </p>
+        </div>
 
-            <div className="calc__drag-hint reveal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-              <span>Move the sliders to model your returns</span>
+        <div className="calc__inner">
+          {/* Results — shown FIRST on mobile, right side on desktop */}
+          <div className="calc__right reveal">
+            <div className="calc__drag-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+              <span>Drag the sliders to model your returns</span>
             </div>
+            <div className="calc__big-num">
+              <div className="calc__big-label">Annual rental income (your 50%)</div>
+              <div className="calc__big-val">{fmt(ownerShare)}</div>
+            </div>
+            <div className="calc__divider" />
+            <div className="calc__big-num">
+              <div className="calc__big-label">Rental yield on Rs. 2.68 Cr</div>
+              <div className="calc__big-val calc__big-val--accent">{yieldPct.toFixed(1)}%</div>
+            </div>
+            <div className="calc__divider" />
+            <div className="calc__big-num">
+              <div className="calc__big-label">Total return over {years} years</div>
+              <div className="calc__big-val">{fmt(totalReturn)}</div>
+            </div>
+            <p className="calc__disclaimer">
+              Illustrative only. Not guaranteed or assured returns.
+            </p>
+          </div>
+
+          {/* Controls — below results on mobile, left side on desktop */}
+          <div className="calc__left">
             <div className="calc__group reveal">
               <div className="calc__group-label">Occupancy</div>
               <div className="calc__tabs">
@@ -69,26 +93,6 @@ export default function Calculator() {
               />
               <div className="calc__range-labels"><span>3 yrs</span><span>15 yrs</span></div>
             </div>
-          </div>
-
-          <div className="calc__right reveal">
-            <div className="calc__big-num">
-              <div className="calc__big-val">{fmt(ownerShare)}</div>
-              <div className="calc__big-label">Annual rental income (your 50%)</div>
-            </div>
-            <div className="calc__divider" />
-            <div className="calc__big-num">
-              <div className="calc__big-val calc__big-val--accent">{yieldPct.toFixed(1)}%</div>
-              <div className="calc__big-label">Rental yield on Rs. 2.68 Cr</div>
-            </div>
-            <div className="calc__divider" />
-            <div className="calc__big-num">
-              <div className="calc__big-val">{fmt(totalReturn)}</div>
-              <div className="calc__big-label">Total return over {years} years (rental + appreciation)</div>
-            </div>
-            <p className="calc__disclaimer">
-              Illustrative only. Not guaranteed or assured returns.
-            </p>
           </div>
         </div>
       </div>

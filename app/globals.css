@@ -1916,3 +1916,53 @@ h1,h2,h3,h4,h5,h6 {
 .nav--scrolled .nav__logo-divider {
   background: rgba(60,50,40,0.2) !important;
 }
+
+/* ================================================================
+   CALCULATOR MOBILE — results on top, controls below
+   ================================================================ */
+.calc__header { max-width: 520px; margin-bottom: clamp(32px, 4vw, 56px); }
+
+/* Desktop: left=controls, right=results */
+.calc__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+/* Label above value for instant feedback */
+.calc__big-num {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.calc__big-num:first-child { padding-top: 0; }
+.calc__big-label {
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(250,250,248,0.4) !important;
+  order: 0;
+}
+.calc__big-val {
+  order: 1;
+  font-size: clamp(36px, 4vw, 60px) !important;
+}
+
+@media (max-width: 900px) {
+  /* Stack: results first, controls second */
+  .calc__inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+  .calc__right { order: 1; }
+  .calc__left  { order: 2; }
+}
+
+@media (max-width: 600px) {
+  .calc__big-val { font-size: clamp(32px, 10vw, 48px) !important; }
+  .calc__right {
+    padding: 20px 16px !important;
+  }
+}
