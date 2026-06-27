@@ -973,9 +973,6 @@ h1,h2,h3,h4,h5,h6 {
    RESPONSIVE
    ---------------------------------------------------------------- */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero__left { padding: 48px var(--pad) 40px; }
-  .hero__right { min-height: 280px; aspect-ratio: 16/9; }
   .opportunity__inner,
   .overview__grid,
   .location__inner,
@@ -1007,12 +1004,6 @@ h1,h2,h3,h4,h5,h6 {
   :root { --pad: 20px; }
   .nav { height: 60px; }
   .nav__logo { font-size: 17px; }
-  .hero__left { padding: 36px 20px 32px; }
-  .hero__right { min-height: 240px; aspect-ratio: 4/3; }
-  .hero__title { font-size: clamp(36px, 11vw, 56px); }
-  .hero__subtitle { font-size: clamp(16px, 5vw, 22px); }
-  .hero__chips { gap: 6px; }
-  .hero__chip { font-size: 11px; padding: 7px 12px; }
   .sec-title { font-size: clamp(28px, 8vw, 44px); }
   .model__grid { grid-template-columns: 1fr; }
   .returns__inner { gap: 28px; }
@@ -1040,10 +1031,7 @@ h1,h2,h3,h4,h5,h6 {
    COLOUR REFRESH — richer section backgrounds
    ================================================================ */
 
-/* Hero left gets a warm gradient wash */
-.hero__left {
-  background: linear-gradient(135deg, var(--white) 60%, #EEF4EE 100%);
-}
+/* hero__left removed — full-bleed layout */
 
 /* Opportunity — soft sage tint */
 .opportunity {
@@ -1258,13 +1246,7 @@ h1,h2,h3,h4,h5,h6 {
   .sec-body   { font-size: 14px; }
   .sec-tag    { font-size: 10px; letter-spacing: 0.18em; }
 
-  /* Hero tighter */
-  .hero__eyebrow  { font-size: 10px; }
-  .hero__title    { font-size: clamp(32px, 10vw, 48px); }
-  .hero__subtitle { font-size: clamp(15px, 4.5vw, 20px); }
-  .hero__desc     { font-size: 13px; line-height: 1.7; }
-  .hero__chip     { font-size: 10px; padding: 6px 10px; gap: 5px; }
-  .hero__right    { aspect-ratio: 3/2; min-height: 200px; }
+  /* Hero mobile — handled in hero block */
 
   /* Nav smaller */
   .nav { height: 56px; padding: 0 16px; }
