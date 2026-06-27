@@ -9,14 +9,14 @@ function useReveal() {
     const els = document.querySelectorAll<HTMLElement>(".reveal, .reveal-line");
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 }
 
-/* ─── Bar chart (Open Space) ─── */
+/* ─── Bar chart ─── */
 function OpenSpaceChart() {
   const [on, setOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -25,15 +25,15 @@ function OpenSpaceChart() {
     if (ref.current) io.observe(ref.current);
     return () => io.disconnect();
   }, []);
-  const T = (h: string, delay: string, cls: string, label: string) => (
+  const Bar = (h: string, delay: string, cls: string, label: string) => (
     <div className={`openspace__bar ${cls}`} style={{ height: on ? h : "0%", transitionDelay: delay }}>{label}</div>
   );
   return (
     <div className="openspace__chart" ref={ref}>
       <div className="openspace__bar-group">
         <div className="openspace__bar-wrap">
-          {T("55%", "0s", "openspace__bar--built", "55%")}
-          {T("45%", "0.15s", "openspace__bar--open-typical", "45%")}
+          {Bar("55%", "0s", "openspace__bar--built", "55%")}
+          {Bar("45%", "0.15s", "openspace__bar--open-typical", "45%")}
         </div>
         <div className="openspace__bar-label">Built · Open</div>
         <div className="openspace__bar-title">Typical Project</div>
@@ -41,8 +41,8 @@ function OpenSpaceChart() {
       <div className="openspace__vs">vs</div>
       <div className="openspace__bar-group">
         <div className="openspace__bar-wrap">
-          {T("46%", "0s", "openspace__bar--built-air", "46%")}
-          {T("54%", "0.15s", "openspace__bar--open-air", "54%")}
+          {Bar("46%", "0s", "openspace__bar--built-air", "46%")}
+          {Bar("54%", "0.15s", "openspace__bar--open-air", "54%")}
         </div>
         <div className="openspace__bar-label">Built · Open</div>
         <div className="openspace__bar-title">Ganapati AIR</div>
@@ -60,6 +60,16 @@ function Nav() {
     </nav>
   );
 }
+
+/* ─── Gallery images ─── */
+const galleryImages = [
+  { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
+  { src: "/images/project/entrance-gate.jpg",     label: "Entrance" },
+  { src: "/images/project/driveway.jpg",           label: "Central Driveway" },
+  { src: "/images/project/exterior.jpg",           label: "Villa Exterior" },
+  { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
+  { src: "/images/project/bathroom.jpg",           label: "Villa Interior" },
+];
 
 /* ─── Main ─── */
 export default function LandingPage() {
@@ -100,8 +110,8 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="hero__right">
-          <Image src="/images/brochure_page_16.png" alt="Ganapati AIR — villa render" fill sizes="50vw" priority style={{ objectFit: "cover" }} />
-          <div className="hero__right-caption">Kavaranahalli, Karnataka</div>
+          <Image src="/images/project/aerial-masterplan.jpg" alt="Ganapati AIR — aerial master plan" fill sizes="(max-width:900px) 100vw, 50vw" priority style={{ objectFit: "cover" }} />
+          <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
         </div>
       </section>
 
@@ -111,7 +121,7 @@ export default function LandingPage() {
           <div className="opportunity__inner">
             <div className="opportunity__image reveal">
               <div className="opportunity__image-line" />
-              <Image src="/images/brochure_page_4.png" alt="Villa exterior" fill sizes="40vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/exterior.jpg" alt="Villa exterior" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
             </div>
             <div>
               <div className="sec-header">
@@ -147,7 +157,7 @@ export default function LandingPage() {
                   "56 fully furnished villas set on approximately 6 acres",
                   "2 BHK layout, delivered turnkey — all white goods, private swimming pool, power backup, and complete furnishing included",
                   "Two villa configurations (see table)",
-                  "RERA approved — registration number to be inserted",
+                  "RERA Approved — PRM/KA/RERA/1254/460/PR/161225/008340",
                   "Possession approximately 3 years from launch",
                 ].map((item) => (
                   <li key={item} className="overview__list-item reveal">
@@ -190,7 +200,16 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="location__inner">
             <div className="location__map reveal">
-              <Image src="/images/brochure_page_9.png" alt="Location & connectivity map" fill sizes="45vw" style={{ objectFit: "cover" }} />
+              <iframe
+                title="Ganapati AIR Location"
+                src="https://maps.google.com/maps?q=FPMJ%2B953,+Kavaranahalli,+Karnataka+562101&output=embed&z=15"
+                width="100%"
+                height="100%"
+                style={{ border: 0, position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div>
               <div className="sec-header">
@@ -209,14 +228,14 @@ export default function LandingPage() {
                     desc: "Steps from one of the world's most visited spiritual destinations, attracting millions of visitors annually.",
                   },
                   {
-                    icon: <><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></>,
+                    icon: <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>,
                     title: "45 min from BLR International Airport",
                     desc: "Strong airport connectivity ensures a consistent flow of domestic and international guests.",
                   },
                   {
                     icon: <><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></>,
                     title: "Strong growth corridor",
-                    desc: "Proximity to upcoming infrastructure: Foxconn campus, Deep Tech Park, Ramaiah Medical Campus, and Nandi Hills eco-tourism.",
+                    desc: "Proximity to Foxconn campus, Deep Tech Park, Ramaiah Medical Campus, and Nandi Hills eco-tourism.",
                   },
                 ].map((f, i) => (
                   <div key={i} className="location__fact reveal">
@@ -230,6 +249,15 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
+              <a
+                href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="location__map-cta reveal"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                Open in Google Maps
+              </a>
             </div>
           </div>
         </div>
@@ -328,8 +356,7 @@ export default function LandingPage() {
                 </table>
                 <p className="returns__disclaimer">
                   These figures are illustrative projections only and do not constitute guaranteed or assured returns.
-                  Actual returns depend on market conditions, occupancy, and operator performance. Not to be construed
-                  as a financial promise under RERA or any applicable regulation.
+                  Actual returns depend on market conditions, occupancy, and operator performance.
                 </p>
               </div>
             </div>
@@ -433,18 +460,11 @@ export default function LandingPage() {
           <div className="sec-header" style={{ maxWidth: 640 }}>
             <span className="sec-tag reveal">Gallery</span>
             <h2 className="sec-title reveal-line"><span>See it.</span></h2>
-            <p className="sec-body reveal">Renders and visuals of the villas, floor plans, and site. Final renders coming soon.</p>
           </div>
           <div className="gallery__grid">
-            {[
-              { src: "/images/brochure_page_16.png", label: "Architecture" },
-              { src: "/images/brochure_page_4.png", label: "Exterior" },
-              { src: "/images/brochure_page_5.png", label: "Private Pool" },
-              { src: "/images/brochure_page_6.png", label: "Living Room" },
-              { src: "/images/brochure_page_18.png", label: "Floor Plan — Type A" },
-            ].map((img) => (
+            {galleryImages.map((img) => (
               <div key={img.src} className="gallery__item reveal">
-                <Image src={img.src} alt={img.label} fill sizes="(max-width:600px) 100vw, 33vw" style={{ objectFit: "cover" }} />
+                <Image src={img.src} alt={img.label} fill sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" style={{ objectFit: "cover" }} />
                 <div className="gallery__label">{img.label}</div>
               </div>
             ))}
@@ -459,15 +479,23 @@ export default function LandingPage() {
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>
             <div className="footer__rera">
-              RERA Registration No.: [To be inserted]<br />
+              RERA Reg. No.: PRM/KA/RERA/1254/460/PR/161225/008340<br />
               Developer: Ganapati Builders
             </div>
           </div>
           <div>
             <div className="footer__col-title">Contact</div>
-            <div className="footer__col-item"><a href="tel:+911234567890">+91 [Number]</a></div>
-            <div className="footer__col-item">Kavaranahalli, Karnataka 562101</div>
-            <div className="footer__col-item"><a href="https://ganapatibuilders.com" target="_blank" rel="noopener noreferrer">ganapatibuilders.com</a></div>
+            <div className="footer__col-item">
+              <a href="tel:+919353742442">+91 93537 42442</a>
+            </div>
+            <div className="footer__col-item">
+              FPMJ+953, Kavaranahalli,<br />Karnataka 562101
+            </div>
+            <div className="footer__col-item">
+              <a href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA" target="_blank" rel="noopener noreferrer">
+                View on Google Maps ↗
+              </a>
+            </div>
           </div>
           <div>
             <div className="footer__col-title">Project</div>
