@@ -244,7 +244,7 @@ export default function LandingPage() {
             <div>
               <div className="sec-header">
                 <span className="sec-tag reveal">Project Overview</span>
-                <h2 className="sec-title reveal-line"><span>What you own</span></h2>
+                <h2 className="sec-title reveal-line"><span>The villa,<br/>in detail.</span></h2>
               </div>
               <ul className="overview__list">
                 {[
