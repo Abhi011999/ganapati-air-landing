@@ -59,6 +59,14 @@ export default function Calculator() {
         <div className="calc__top reveal">
           <span className="sec-tag">Returns Calculator</span>
           <h2 className="sec-title" style={{ marginTop: 10 }}><span>Run the numbers.</span></h2>
+          <p className="calc__nature-line">
+            <svg className="calc__leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22c0 0-8-4-8-12a8 8 0 0 1 16 0c0 8-8 12-8 12z"/>
+              <path d="M12 22V10"/>
+              <path d="M8 14l4-4 4 4"/>
+            </svg>
+            Your villa earns while nature breathes around it
+          </p>
         </div>
 
         <div className="calc__compact reveal">
@@ -86,8 +94,10 @@ export default function Calculator() {
 
             {/* Horizon */}
             <div className="calc__field">
-              <div className="calc__field-label">
-                Horizon <span className="calc__field-val">{years} yrs</span>
+              <div className="calc__field-label">Horizon</div>
+              <div className="calc__horizon-big">
+                <span className="calc__horizon-num">{years}</span>
+                <span className="calc__horizon-unit">yrs</span>
               </div>
               <input
                 type="range" min={3} max={15} step={1} value={years}
@@ -124,9 +134,27 @@ export default function Calculator() {
 
         </div>
 
-        <p className="calc__disclaimer reveal">
-          Illustrative only. Not guaranteed or assured returns.
-        </p>
+        <div className="calc__footer-row reveal">
+          <div className="calc__nature-icons">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 8C8 10 5.9 16.17 3.82 19.53c-.67 1.11.98 2.07 1.65.96.69-1.15 1.83-2.77 3.53-4.07"/>
+              <path d="M12 22V12"/>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="4" r="2"/>
+              <path d="M12 6v6"/>
+              <path d="M8 10c1.5-1 5.5-1 7 0"/>
+              <path d="M9 14c1-1.5 5-1.5 6 0"/>
+              <path d="M10 18c.8-1 3.2-1 4 0"/>
+              <path d="M12 18v4"/>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22c0 0-8-4-8-12a8 8 0 0 1 16 0c0 8-8 12-8 12z"/>
+              <path d="M12 22V10"/>
+            </svg>
+          </div>
+          <p className="calc__disclaimer">Illustrative only. Not guaranteed or assured returns.</p>
+        </div>
       </div>
     </section>
   );

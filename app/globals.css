@@ -2575,3 +2575,74 @@ h1,h2,h3,h4,h5,h6 {
 /* Divider */
 .calc__result-divider { background: rgba(100,200,140,0.12) !important; }
 .calc__disclaimer { color: rgba(168,212,180,0.25) !important; }
+
+/* ================================================================
+   CALCULATOR — NATURE LINE + HORIZON BIG NUMBER FIX
+   ================================================================ */
+
+/* Nature tagline under heading */
+.calc__nature-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(168,212,180,0.5);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+.calc__leaf {
+  width: 16px; height: 16px;
+  stroke: rgba(125,207,160,0.6);
+  flex-shrink: 0;
+}
+
+/* Horizon — big live number replaces inline label */
+.calc__horizon-big {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.calc__horizon-num {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 300;
+  color: #A8F0C0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.calc__horizon-unit {
+  font-size: clamp(16px, 2vw, 22px);
+  color: rgba(168,240,192,0.55);
+  letter-spacing: 0.06em;
+}
+
+/* Footer row: nature icons + disclaimer inline */
+.calc__footer-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+.calc__nature-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.calc__nature-icons svg {
+  width: 18px; height: 18px;
+  stroke: rgba(125,207,160,0.35);
+}
+.calc__footer-row .calc__disclaimer {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .calc__nature-line { font-size: 12px; }
+  .calc__horizon-num { font-size: clamp(40px, 12vw, 60px); }
+  .calc__footer-row  { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
