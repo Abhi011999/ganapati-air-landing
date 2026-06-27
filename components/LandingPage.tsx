@@ -71,6 +71,8 @@ const galleryImages = [
   { src: "/images/project/clubhouse.jpg",          label: "Clubhouse" },
   { src: "/images/project/garden-landscape.jpg",   label: "Garden & Landscape" },
   { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
+  { src: "/images/project/bedroom-2.jpg",          label: "Bedroom" },
+  { src: "/images/project/bedroom-3.jpg",          label: "Bedroom Suite" },
   { src: "/images/project/loft-interior.jpg",      label: "Living Space" },
   { src: "/images/project/living-room.jpg",        label: "Interior" },
   { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
