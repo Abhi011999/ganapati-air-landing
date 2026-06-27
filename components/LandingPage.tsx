@@ -64,16 +64,18 @@ function Nav() {
 
 /* ─── Gallery images ─── */
 const galleryImages = [
-  { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
-  { src: "/images/project/rooftop-pool.jpg",      label: "Infinity Pool" },
-  { src: "/images/project/entrance-arch.jpg",     label: "Entrance" },
-  { src: "/images/project/villa-exterior.jpg",    label: "Villa Exterior" },
-  { src: "/images/project/master-bedroom.jpg",    label: "Master Bedroom" },
-  { src: "/images/project/loft-interior.jpg",     label: "Living Space" },
-  { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
-  { src: "/images/project/landscape.jpg",         label: "Landscape" },
-  { src: "/images/project/driveway.jpg",          label: "Driveway" },
-  { src: "/images/project/street-walkway.jpg",    label: "Street View" },
+  { src: "/images/project/aerial-masterplan.jpg",  label: "Aerial Master Plan" },
+  { src: "/images/project/rooftop-pool.jpg",       label: "Infinity Pool" },
+  { src: "/images/project/entrance-arch.jpg",      label: "Entrance" },
+  { src: "/images/project/villa-exterior.jpg",     label: "Villa Exterior" },
+  { src: "/images/project/clubhouse.jpg",          label: "Clubhouse" },
+  { src: "/images/project/garden-landscape.jpg",   label: "Garden & Landscape" },
+  { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
+  { src: "/images/project/loft-interior.jpg",      label: "Living Space" },
+  { src: "/images/project/living-room.jpg",        label: "Interior" },
+  { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
+  { src: "/images/project/driveway.jpg",           label: "Driveway" },
+  { src: "/images/project/street-walkway.jpg",     label: "Street View" },
 ];
 
 /* ─── Main ─── */
