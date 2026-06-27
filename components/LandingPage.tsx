@@ -105,27 +105,38 @@ export default function LandingPage() {
 
       {/* 1. HERO */}
       <section className="hero" id="hero">
-        <div className="hero__left">
-          <span className="hero__eyebrow reveal">Managed Investment Villas</span>
-          <h1 className="hero__title reveal-line"><span>Ganapati AIR</span></h1>
-          <p className="hero__subtitle reveal-line"><span>Awakenings in Reflection</span></p>
-          <p className="hero__desc reveal">
+        {/* Full-bleed background image */}
+        <div className="hero__bg">
+          <Image
+            src="/images/project/rooftop-pool-2.jpg"
+            alt="Ganapati AIR infinity pool"
+            fill sizes="100vw"
+            priority style={{ objectFit: "cover" }}
+          />
+        </div>
+        {/* Gradient overlay */}
+        <div className="hero__overlay" />
+        {/* Content */}
+        <div className="hero__content">
+          <span className="hero__eyebrow">Managed Investment Villas</span>
+          <h1 className="hero__title"><span>Ganapati AIR</span></h1>
+          <p className="hero__subtitle"><span>Awakenings in Reflection</span></p>
+          <p className="hero__desc">
             Managed luxury investment villas, 2 km from the Isha Foundation.
-            Own a fully furnished villa, let a professional operator run it as
-            a hospitality asset, and earn returns while your asset appreciates.
+            Own a fully furnished villa, earn returns while your asset appreciates.
           </p>
-          <div className="hero__chips reveal">
+          <div className="hero__chips">
             <span className="hero__chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-4h4v4h4a1 1 0 001-1v-9"/></svg>
               56 Villas
             </span>
             <span className="hero__chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              2 km from Isha Foundation
+              2 km from Isha
             </span>
             <span className="hero__chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-              45 min from BLR Airport
+              45 min from BLR
             </span>
             <span className="hero__chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
@@ -133,14 +144,10 @@ export default function LandingPage() {
             </span>
           </div>
         </div>
-        <div className="hero__right">
-          <Image
-            src="/images/project/rooftop-pool-2.jpg"
-            alt="Ganapati AIR infinity pool"
-            fill sizes="(max-width:900px) 100vw, 50vw"
-            priority style={{ objectFit: "cover" }}
-          />
-          <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
+        <div className="hero__location-tag">Kavaranahalli, Karnataka</div>
+        <div className="hero__scroll-hint">
+          <span>Scroll</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
         </div>
       </section>
 
