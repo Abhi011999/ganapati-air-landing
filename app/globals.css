@@ -182,9 +182,12 @@ h1,h2,h3,h4,h5,h6 {
   font-size: var(--sub);
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(168,212,180,0.85);
+  color: rgba(200,240,216,0.95);
   margin-bottom: clamp(14px, 2vw, 24px);
   animation: heroFadeUp 0.8s ease 0.2s both;
+  background: rgba(78,116,96,0.25);
+  padding: 6px 14px;
+  border-left: 3px solid rgba(168,212,180,0.7);
 }
 .hero__title {
   font-size: clamp(52px, 8vw, 110px);
@@ -1844,3 +1847,38 @@ h1,h2,h3,h4,h5,h6 {
   .openspace__bar-track { height: 42px; }
   .openspace__bar-fill { font-size: 10px; }
 }
+
+/* ================================================================
+   OPEN SPACE — stronger highlights
+   ================================================================ */
+.openspace__bar-row--air .openspace__bar-track {
+  box-shadow: 0 0 0 1px rgba(168,212,180,0.3), 0 0 24px rgba(78,116,96,0.3);
+}
+.openspace__bar-fill--green-air {
+  background: linear-gradient(90deg, rgba(78,116,96,0.7), rgba(100,160,120,0.85)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.openspace__benefit {
+  background: rgba(78,116,96,0.08) !important;
+  border: 1px solid rgba(168,212,180,0.18) !important;
+  border-top: 3px solid rgba(168,212,180,0.5) !important;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.openspace__benefit:hover {
+  background: rgba(78,116,96,0.16) !important;
+  border-top-color: #A8D4B4 !important;
+}
+.openspace__benefit-icon { font-size: 32px !important; }
+.openspace__benefit-title { color: #C8F0D8 !important; font-size: 13px !important; }
+.openspace__benefit-desc  { color: rgba(250,250,248,0.55) !important; }
+
+/* Sec tag — all sections */
+.sec-tag {
+  font-size: 12px !important;
+}
+
+/* DVP footer — no dash */
+.footer__credit span { letter-spacing: 0.08em; }

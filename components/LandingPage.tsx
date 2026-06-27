@@ -292,7 +292,7 @@ export default function LandingPage() {
             <h2 className="sec-title reveal-line" style={{ color: "var(--white)" }}><span>More green.<br/>Less concrete.</span></h2>
             <p className="sec-body reveal" style={{ color: "rgba(250,250,248,0.6)", maxWidth: 520, margin: "0 auto" }}>
               Most projects in Bangalore use up to 55% of land for saleable plots.
-              We use only 46% — so 54% of the entire project stays open, green, and breathable.
+              We use only 46%. That means 54% of the entire project stays open, green, and breathable.
             </p>
           </div>
 
@@ -325,7 +325,7 @@ export default function LandingPage() {
           {/* Benefits row */}
           <div className="openspace__benefits reveal">
             {[
-              { icon: "🌳", title: "More Trees", desc: "15–16% of land dedicated to parks and green buffers" },
+              { icon: "🌳", title: "More Trees", desc: "15 to 16% of land dedicated to parks and green buffers" },
               { icon: "🏞️", title: "Lake Buffer", desc: "Natural lake boundary preserved, no encroachment" },
               { icon: "🏡", title: "More Privacy", desc: "Greater spacing between villas, less crowding" },
               { icon: "🍃", title: "Fresh Air", desc: "Better natural ventilation across the entire layout" },
@@ -570,7 +570,7 @@ export default function LandingPage() {
 
         </div>
         <div className="footer__credit">
-          <span>DVP —</span>
+          <span>DVP</span>
           <a href="https://socialmusketeers.in" target="_blank" rel="noopener noreferrer">socialmusketeers.in</a>
         </div>
       </footer>
