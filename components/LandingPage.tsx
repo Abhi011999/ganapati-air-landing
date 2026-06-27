@@ -57,9 +57,21 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__logo-wrap">
-        <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={38} height={38} style={{ objectFit: "contain", borderRadius: 6 }} />
+        <Image
+          src="/ganapati-logo.jpg"
+          alt="Ganapati Builders"
+          width={34} height={34}
+          style={{ objectFit: "contain", borderRadius: 6 }}
+        />
         <div className="nav__logo-divider" />
-        <div className="nav__logo">Ganapati <span>AIR</span></div>
+        <div className="nav__air-logo-pill">
+          <Image
+            src="/air-logo.jpg"
+            alt="Ganapati AIR"
+            width={90} height={30}
+            style={{ objectFit: "contain" }}
+          />
+        </div>
       </div>
       <div className="nav__tag">Awakenings in Reflection</div>
     </nav>
