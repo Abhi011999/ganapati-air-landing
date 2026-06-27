@@ -8,18 +8,26 @@ function fmtVal(n: number) {
   return `Rs. ${n.toLocaleString("en-IN")}`;
 }
 
-function LiveNumber({ value, fmt }: { value: number; fmt: (n: number) => string }) {
-  const [display, setDisplay] = useState(value);
-  const frameRef = useRef<number>(0);
-  const fromRef  = useRef<number>(value);
+function LiveNumber({ value, fmt, accent = false }: { value: number; fmt: (n: number) => string; accent?: boolean }) {
+  const [display, setDisplay]   = useState(value);
+  const [flashing, setFlashing] = useState(false);
+  const frameRef  = useRef<number>(0);
+  const fromRef   = useRef<number>(value);
+  const flashRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     fromRef.current = display;
     const start = performance.now();
     const from  = fromRef.current;
     const to    = value;
-    const dur   = 450;
-    const run   = (now: number) => {
+    const dur   = 500;
+
+    // flash glow on change
+    setFlashing(true);
+    if (flashRef.current) clearTimeout(flashRef.current);
+    flashRef.current = setTimeout(() => setFlashing(false), 600);
+
+    const run = (now: number) => {
       const t = Math.min((now - start) / dur, 1);
       const e = 1 - Math.pow(1 - t, 3);
       setDisplay(from + (to - from) * e);
@@ -27,11 +35,18 @@ function LiveNumber({ value, fmt }: { value: number; fmt: (n: number) => string 
     };
     cancelAnimationFrame(frameRef.current);
     frameRef.current = requestAnimationFrame(run);
-    return () => cancelAnimationFrame(frameRef.current);
+    return () => {
+      cancelAnimationFrame(frameRef.current);
+      if (flashRef.current) clearTimeout(flashRef.current);
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  return <>{fmt(display)}</>;
+  return (
+    <span className={`live-num${flashing ? (accent ? " live-num--flash-accent" : " live-num--flash") : ""}`}>
+      {fmt(display)}
+    </span>
+  );
 }
 
 const OCC = [
@@ -121,7 +136,7 @@ export default function Calculator() {
             <div className="calc__result-cell calc__result-cell--accent">
               <div className="calc__result-label">Total over {years} yrs</div>
               <div className="calc__result-num">
-                <LiveNumber value={totalReturn} fmt={fmtVal} />
+                <LiveNumber value={totalReturn} fmt={fmtVal} accent />
               </div>
               <div className="calc__result-sub">rental + appreciation</div>
             </div>
