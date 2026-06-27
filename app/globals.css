@@ -1966,3 +1966,219 @@ h1,h2,h3,h4,h5,h6 {
     padding: 20px 16px !important;
   }
 }
+
+/* ================================================================
+   CALCULATOR — BENTO REDESIGN
+   ================================================================ */
+.calc__header { max-width: 560px; margin-bottom: clamp(36px, 5vw, 64px); }
+
+.calc__bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+/* Cards */
+.calc__card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(168,212,180,0.12);
+  padding: clamp(24px, 3vw, 36px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.calc__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(168,212,180,0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.calc__card:hover { border-color: rgba(168,212,180,0.25); background: rgba(255,255,255,0.07); }
+.calc__card:hover::before { opacity: 1; }
+
+.calc__card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(168,212,180,0.6);
+  margin-bottom: 20px;
+}
+
+/* Occupancy card */
+.calc__card--occ { grid-column: 1; grid-row: 1; }
+.calc__occ-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calc__occ-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,212,180,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.calc__occ-tab:hover { background: rgba(168,212,180,0.08); border-color: rgba(168,212,180,0.25); }
+.calc__occ-tab.active {
+  background: rgba(168,212,180,0.15);
+  border-color: rgba(168,212,180,0.45);
+  border-left: 3px solid #A8D4B4;
+}
+.calc__occ-tab-pct {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: rgba(250,250,248,0.5);
+  transition: color 0.2s ease;
+}
+.calc__occ-tab.active .calc__occ-tab-pct { color: #C8F0D8; }
+.calc__occ-tab-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(250,250,248,0.35);
+  transition: color 0.2s ease;
+}
+.calc__occ-tab.active .calc__occ-tab-name { color: rgba(200,240,216,0.8); }
+
+/* Horizon card */
+.calc__card--horizon { grid-column: 2; grid-row: 1; }
+.calc__horizon-num {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 5vw, 80px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+.calc__horizon-num span {
+  font-size: clamp(20px, 2vw, 28px);
+  color: rgba(168,212,180,0.7);
+  margin-left: 6px;
+}
+
+/* Income card — full width */
+.calc__card--income { grid-column: 1 / 3; grid-row: 2; }
+.calc__hero-num {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.calc__hero-num--accent { color: #A8D4B4; }
+.calc__income-sub {
+  font-size: 12px;
+  color: rgba(250,250,248,0.35);
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+/* Total card — full width */
+.calc__card--total { grid-column: 1 / 3; grid-row: 3; }
+
+/* Progress bar */
+.calc__bar-wrap { margin-top: 4px; }
+.calc__bar-track {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.calc__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(168,212,180,0.5), #A8D4B4);
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.calc__bar-fill--accent {
+  background: linear-gradient(90deg, rgba(168,212,180,0.4), #C8F0D8);
+}
+.calc__bar-label {
+  font-size: 12px;
+  color: rgba(168,212,180,0.6);
+  letter-spacing: 0.06em;
+}
+
+/* Hint text */
+.calc__occ-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 11px;
+  color: rgba(250,250,248,0.2);
+  letter-spacing: 0.08em;
+}
+.calc__occ-hint svg {
+  width: 13px; height: 13px;
+  stroke: rgba(250,250,248,0.2);
+  flex-shrink: 0;
+}
+
+/* Disclaimer */
+.calc__disclaimer {
+  margin-top: 24px;
+  font-size: 11px;
+  color: rgba(250,250,248,0.2);
+  font-style: italic;
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* Slider */
+.calc__slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 2px;
+  background: rgba(255,255,255,0.12);
+  outline: none; cursor: pointer; border-radius: 1px;
+  margin: 4px 0;
+}
+.calc__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #A8D4B4;
+  cursor: pointer;
+  border: 3px solid #1E3A2A;
+  box-shadow: 0 0 0 2px rgba(168,212,180,0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.calc__slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 4px rgba(168,212,180,0.2);
+}
+.calc__slider::-moz-range-thumb {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #A8D4B4; cursor: pointer;
+  border: 3px solid #1E3A2A;
+}
+.calc__range-labels {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: rgba(250,250,248,0.2);
+  margin-top: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .calc__bento { grid-template-columns: 1fr; gap: 12px; }
+  .calc__card--occ    { grid-column: 1; grid-row: auto; }
+  .calc__card--horizon{ grid-column: 1; grid-row: auto; }
+  .calc__card--income { grid-column: 1; grid-row: auto; }
+  .calc__card--total  { grid-column: 1; grid-row: auto; }
+  .calc__hero-num { font-size: clamp(36px, 10vw, 56px); }
+  .calc__horizon-num { font-size: clamp(44px, 14vw, 64px); }
+  .calc__occ-tabs { gap: 6px; }
+  .calc__occ-tab-pct { font-size: 18px; }
+}
