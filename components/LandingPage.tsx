@@ -54,23 +54,29 @@ function OpenSpaceChart() {
   );
 }
 
-/* ── All 18 real project photos ── */
+/* ── All 24 real project photos ── */
 const galleryImages = [
   { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
-  { src: "/images/project/rooftop-pool.jpg",      label: "Infinity Pool" },
-  { src: "/images/project/entrance-arch.jpg",     label: "Entrance" },
+  { src: "/images/project/rooftop-pool-2.jpg",    label: "Infinity Pool" },
+  { src: "/images/project/entrance-gate.jpg",     label: "Entrance Gate" },
+  { src: "/images/project/villa-row.jpg",         label: "Villa Exteriors" },
   { src: "/images/project/villa-exterior.jpg",    label: "Villa Exterior" },
+  { src: "/images/project/entrance-arch.jpg",     label: "Entrance Arch" },
   { src: "/images/project/amphitheatre.jpg",      label: "Amphitheatre" },
   { src: "/images/project/clubhouse.jpg",         label: "Clubhouse" },
   { src: "/images/project/garden-landscape.jpg",  label: "Garden and Landscape" },
   { src: "/images/project/landscape.jpg",         label: "Landscape" },
+  { src: "/images/project/sunken-seating.jpg",    label: "Sunken Seating" },
+  { src: "/images/project/rooftop-pool.jpg",      label: "Pool Deck" },
   { src: "/images/project/master-bedroom.jpg",    label: "Master Bedroom" },
+  { src: "/images/project/bedroom-4.jpg",         label: "Bedroom" },
   { src: "/images/project/bedroom-2.jpg",         label: "Bedroom" },
   { src: "/images/project/bedroom-3.jpg",         label: "Bedroom Suite" },
   { src: "/images/project/loft-interior.jpg",     label: "Living Space" },
   { src: "/images/project/living-room.jpg",       label: "Interior" },
   { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
   { src: "/images/project/bathroom-2.jpg",        label: "Bathroom" },
+  { src: "/images/project/powder-room.jpg",       label: "Powder Room" },
   { src: "/images/project/driveway.jpg",          label: "Driveway" },
   { src: "/images/project/driveway-2.jpg",        label: "Driveway" },
   { src: "/images/project/street-walkway.jpg",    label: "Street View" },
@@ -135,7 +141,7 @@ export default function LandingPage() {
         </div>
         <div className="hero__right">
           <Image
-            src="/images/project/rooftop-pool.jpg"
+            src="/images/project/rooftop-pool-2.jpg"
             alt="Ganapati AIR infinity pool"
             fill sizes="(max-width:900px) 100vw, 50vw"
             priority style={{ objectFit: "cover" }}
