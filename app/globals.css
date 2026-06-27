@@ -161,9 +161,9 @@ h1,h2,h3,h4,h5,h6 {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to top,  rgba(5,15,10,0.95) 0%, rgba(5,15,10,0.6) 45%, rgba(5,15,10,0.35) 100%),
-    linear-gradient(to bottom, rgba(5,15,10,0.7) 0%, transparent 25%),
-    linear-gradient(to right, rgba(5,15,10,0.65) 0%, transparent 65%);
+    linear-gradient(to top, rgba(4,12,8,0.97) 0%, rgba(4,12,8,0.75) 35%, rgba(4,12,8,0.2) 70%, transparent 100%),
+    linear-gradient(to bottom, rgba(4,12,8,0.5) 0%, transparent 20%),
+    linear-gradient(to right, rgba(4,12,8,0.5) 0%, transparent 70%);
 }
 .hero__content {
   position: relative;
@@ -185,11 +185,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 .hero__title {
   font-size: clamp(52px, 8vw, 110px);
-  color: #ffffff;
+  color: #F5F0E8;
   line-height: 0.95;
   margin-bottom: clamp(10px, 1.2vw, 20px);
   animation: heroFadeUp 0.8s ease 0.4s both;
-  text-shadow: 0 2px 40px rgba(0,0,0,0.5), 0 1px 8px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 48px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.6), 0 0 80px rgba(0,0,0,0.3);
 }
 .hero__subtitle {
   font-family: var(--font-display);

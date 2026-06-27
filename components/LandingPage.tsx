@@ -112,7 +112,7 @@ export default function LandingPage() {
         {/* Full-bleed background image */}
         <div className="hero__bg">
           <Image
-            src="/images/project/villa-exterior.jpg"
+            src="/images/project/rooftop-pool-2.jpg"
             alt="Ganapati AIR infinity pool"
             fill sizes="100vw"
             priority style={{ objectFit: "cover" }}
