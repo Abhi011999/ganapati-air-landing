@@ -97,7 +97,7 @@ export default function LandingPage() {
               src="/air-logo.jpg"
               alt="Ganapati AIR"
               width={110} height={38}
-              style={{ objectFit: "contain", display: "block" }}
+              style={{ objectFit: "contain", display: "block", filter: "contrast(1.3) saturate(1.4) brightness(0.85)" }}
             />
         </div>
         <div className="nav__tag">Awakenings in Reflection</div>
@@ -140,10 +140,6 @@ export default function LandingPage() {
             fill sizes="(max-width:900px) 100vw, 50vw"
             priority style={{ objectFit: "cover" }}
           />
-          <div className="hero__overlay-logos">
-            <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={44} height={44} style={{ objectFit: "contain", borderRadius: 6 }} />
-            <Image src="/air-logo.jpg" alt="Ganapati AIR" width={110} height={38} style={{ objectFit: "contain", borderRadius: 4 }} />
-          </div>
           <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
         </div>
       </section>
