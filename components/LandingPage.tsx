@@ -71,10 +71,9 @@ function OpenSpaceChart() {
   );
 }
 
-/* ── 20 curated real project photos, zero duplicates ── */
+/* ── 17 curated real project photos, zero duplicates ── */
 const galleryImages = [
   { src: "/images/project/aerial-villas.jpg",      label: "Aerial View" },
-  { src: "/images/project/aerial-masterplan.jpg",  label: "Master Plan" },
   { src: "/images/project/arched-walkway.jpg",     label: "Arched Walkway" },
   { src: "/images/project/entrance-gate.jpg",      label: "Entrance" },
   { src: "/images/project/villa-exterior.jpg",     label: "Villa Exterior" },
@@ -88,11 +87,9 @@ const galleryImages = [
   { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
   { src: "/images/project/bedroom-4.jpg",          label: "Bedroom" },
   { src: "/images/project/open-living.jpg",        label: "Living Area" },
-  { src: "/images/project/loft-interior.jpg",      label: "Living Space" },
   { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
   { src: "/images/project/powder-room.jpg",        label: "Powder Room" },
   { src: "/images/project/driveway-2.jpg",         label: "Driveway" },
-  { src: "/images/project/rooftop-pool.jpg",       label: "Pool Deck" },
 ];
 
 export default function LandingPage() {
