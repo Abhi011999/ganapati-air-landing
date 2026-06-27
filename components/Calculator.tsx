@@ -8,26 +8,18 @@ function fmtVal(n: number) {
   return `Rs. ${n.toLocaleString("en-IN")}`;
 }
 
-function LiveNumber({ value, fmt, accent = false }: { value: number; fmt: (n: number) => string; accent?: boolean }) {
-  const [display, setDisplay]   = useState(value);
-  const [flashing, setFlashing] = useState(false);
-  const frameRef  = useRef<number>(0);
-  const fromRef   = useRef<number>(value);
-  const flashRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
+function LiveNumber({ value, fmt }: { value: number; fmt: (n: number) => string }) {
+  const [display, setDisplay] = useState(value);
+  const frameRef = useRef<number>(0);
+  const fromRef  = useRef<number>(value);
 
   useEffect(() => {
     fromRef.current = display;
     const start = performance.now();
     const from  = fromRef.current;
     const to    = value;
-    const dur   = 500;
-
-    // flash glow on change
-    setFlashing(true);
-    if (flashRef.current) clearTimeout(flashRef.current);
-    flashRef.current = setTimeout(() => setFlashing(false), 600);
-
-    const run = (now: number) => {
+    const dur   = 480;
+    const run   = (now: number) => {
       const t = Math.min((now - start) / dur, 1);
       const e = 1 - Math.pow(1 - t, 3);
       setDisplay(from + (to - from) * e);
@@ -35,18 +27,11 @@ function LiveNumber({ value, fmt, accent = false }: { value: number; fmt: (n: nu
     };
     cancelAnimationFrame(frameRef.current);
     frameRef.current = requestAnimationFrame(run);
-    return () => {
-      cancelAnimationFrame(frameRef.current);
-      if (flashRef.current) clearTimeout(flashRef.current);
-    };
+    return () => cancelAnimationFrame(frameRef.current);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  return (
-    <span className={`live-num${flashing ? (accent ? " live-num--flash-accent" : " live-num--flash") : ""}`}>
-      {fmt(display)}
-    </span>
-  );
+  return <>{fmt(display)}</>;
 }
 
 const OCC = [
@@ -71,6 +56,8 @@ export default function Calculator() {
   return (
     <section className="section calc" id="calculator">
       <div className="wrap">
+
+        {/* Header */}
         <div className="calc__top reveal">
           <span className="sec-tag">Returns Calculator</span>
           <h2 className="sec-title" style={{ marginTop: 10 }}><span>Run the numbers.</span></h2>
@@ -78,15 +65,14 @@ export default function Calculator() {
             <svg className="calc__leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22c0 0-8-4-8-12a8 8 0 0 1 16 0c0 8-8 12-8 12z"/>
               <path d="M12 22V10"/>
-              <path d="M8 14l4-4 4 4"/>
             </svg>
             Your villa earns while nature breathes around it
           </p>
         </div>
 
-        <div className="calc__compact reveal">
+        <div className="calc__shell reveal">
 
-          {/* ── Controls row ── */}
+          {/* ── Top: controls ── */}
           <div className="calc__controls">
 
             {/* Occupancy */}
@@ -119,49 +105,50 @@ export default function Calculator() {
                 onChange={(e) => setYears(Number(e.target.value))}
                 className="calc__slider"
               />
-              <div className="calc__range-labels"><span>3 yrs</span><span>15 yrs</span></div>
+              <div className="calc__range-labels"><span>3</span><span>15</span></div>
             </div>
+
           </div>
 
-          {/* ── Results row ── */}
+          {/* ── Divider ── */}
+          <div className="calc__hdivider" />
+
+          {/* ── Bottom: results ── */}
           <div className="calc__results-row">
+
             <div className="calc__result-cell">
               <div className="calc__result-label">Annual income</div>
               <div className="calc__result-num">
                 <LiveNumber value={annual} fmt={fmtVal} />
               </div>
-              <div className="calc__result-sub">{yieldPct.toFixed(1)}% yield</div>
+              <div className="calc__result-sub">{yieldPct.toFixed(1)}% rental yield</div>
             </div>
-            <div className="calc__result-divider" />
+
+            <div className="calc__result-vdivider" />
+
             <div className="calc__result-cell calc__result-cell--accent">
               <div className="calc__result-label">Total over {years} yrs</div>
               <div className="calc__result-num">
-                <LiveNumber value={totalReturn} fmt={fmtVal} accent />
+                <LiveNumber value={totalReturn} fmt={fmtVal} />
               </div>
-              <div className="calc__result-sub">rental + appreciation</div>
+              <div className="calc__result-sub">income + capital growth</div>
             </div>
+
           </div>
 
-          {/* Live bar */}
+          {/* ── Live yield bar ── */}
           <div className="calc__livebar">
             <div className="calc__livebar-fill" style={{ width: `${Math.min((yieldPct / 15) * 100, 100)}%` }} />
           </div>
 
         </div>
 
-        <div className="calc__footer-row reveal">
+        {/* Footer */}
+        <div className="calc__footer reveal">
           <div className="calc__nature-icons">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M17 8C8 10 5.9 16.17 3.82 19.53c-.67 1.11.98 2.07 1.65.96.69-1.15 1.83-2.77 3.53-4.07"/>
               <path d="M12 22V12"/>
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="4" r="2"/>
-              <path d="M12 6v6"/>
-              <path d="M8 10c1.5-1 5.5-1 7 0"/>
-              <path d="M9 14c1-1.5 5-1.5 6 0"/>
-              <path d="M10 18c.8-1 3.2-1 4 0"/>
-              <path d="M12 18v4"/>
             </svg>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22c0 0-8-4-8-12a8 8 0 0 1 16 0c0 8-8 12-8 12z"/>
@@ -170,6 +157,7 @@ export default function Calculator() {
           </div>
           <p className="calc__disclaimer">Illustrative only. Not guaranteed or assured returns.</p>
         </div>
+
       </div>
     </section>
   );
