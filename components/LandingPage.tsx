@@ -56,6 +56,7 @@ function OpenSpaceChart() {
 
 /* ── All 24 real project photos ── */
 const galleryImages = [
+  { src: "/images/project/aerial-villas.jpg",     label: "Aerial View" },
   { src: "/images/project/arched-walkway.jpg",    label: "Arched Walkway" },
   { src: "/images/project/street-view-2.jpg",     label: "Street View" },
   { src: "/images/project/clubhouse-exterior.jpg",label: "Clubhouse" },
@@ -168,7 +169,7 @@ export default function LandingPage() {
           <div className="opportunity__inner">
             <div className="opportunity__image reveal">
               <div className="opportunity__image-line" />
-              <Image src="/images/project/arched-walkway.jpg" alt="Arched entrance walkway" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/aerial-villas.jpg" alt="Aerial view of Ganapati AIR" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
             </div>
             <div>
               <div className="sec-header">
