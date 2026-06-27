@@ -38,6 +38,11 @@ export default function Calculator() {
               Based on Rs. 21,000 avg nightly rate, 50/50 revenue split, 10% annual appreciation.
             </p>
 
+            <div className="calc__drag-hint reveal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+              <span>Move the sliders to model your returns</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+            </div>
             <div className="calc__group reveal">
               <div className="calc__group-label">Occupancy</div>
               <div className="calc__tabs">
@@ -56,7 +61,7 @@ export default function Calculator() {
             </div>
 
             <div className="calc__group reveal">
-              <div className="calc__group-label">Horizon — {years} Years</div>
+              <div className="calc__group-label">Horizon: {years} Years</div>
               <input
                 type="range" min={3} max={15} step={1} value={years}
                 onChange={(e) => setYears(Number(e.target.value))}
