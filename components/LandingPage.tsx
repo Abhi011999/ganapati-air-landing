@@ -68,22 +68,25 @@ function Nav() {
   );
 }
 
-/* All gallery images */
+/* All gallery images — only real project photos */
 const galleryImages = [
   { src: "/images/project/aerial-masterplan.jpg",  label: "Aerial Master Plan" },
   { src: "/images/project/rooftop-pool.jpg",       label: "Infinity Pool" },
   { src: "/images/project/entrance-arch.jpg",      label: "Entrance" },
   { src: "/images/project/villa-exterior.jpg",     label: "Villa Exterior" },
+  { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
   { src: "/images/project/clubhouse.jpg",          label: "Clubhouse" },
   { src: "/images/project/garden-landscape.jpg",   label: "Garden and Landscape" },
+  { src: "/images/project/landscape.jpg",          label: "Landscape" },
   { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
   { src: "/images/project/bedroom-2.jpg",          label: "Bedroom" },
   { src: "/images/project/bedroom-3.jpg",          label: "Bedroom Suite" },
   { src: "/images/project/loft-interior.jpg",      label: "Living Space" },
   { src: "/images/project/living-room.jpg",        label: "Interior" },
   { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
-  { src: "/images/project/landscape.jpg",          label: "Landscape" },
+  { src: "/images/project/bathroom-2.jpg",         label: "Bathroom" },
   { src: "/images/project/driveway.jpg",           label: "Driveway" },
+  { src: "/images/project/driveway-2.jpg",         label: "Driveway" },
   { src: "/images/project/street-walkway.jpg",     label: "Street View" },
 ];
 
@@ -461,7 +464,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="amenities__image reveal">
-              <Image src="/images/project/clubhouse.jpg" alt="Clubhouse" fill sizes="(max-width:900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/amphitheatre.jpg" alt="Amphitheatre" fill sizes="(max-width:900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </div>
