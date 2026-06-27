@@ -3171,3 +3171,40 @@ h1,h2,h3,h4,h5,h6 {
   .infra__item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(100,140,110,0.08) !important; }
   .infra__item:last-child { border-bottom: none !important; }
 }
+
+/* ================================================================
+   STATS BAR — CONTRAST FIX
+   ================================================================ */
+.stats-bar {
+  background: #0D2318 !important;
+  border-bottom: 1px solid rgba(168,212,180,0.15) !important;
+}
+.stats-bar__inner {
+  gap: 0 !important;
+}
+.stats-bar__item {
+  padding: 22px 20px !important;
+  border-right: 1px solid rgba(168,212,180,0.12) !important;
+  gap: 6px !important;
+}
+.stats-bar__val {
+  font-size: clamp(22px, 2.8vw, 34px) !important;
+  color: #FFFFFF !important;
+  font-weight: 400 !important;
+}
+.stats-bar__unit {
+  font-size: 0.6em !important;
+  color: rgba(255,255,255,0.7) !important;
+}
+.stats-bar__label {
+  font-size: 11px !important;
+  color: rgba(168,212,180,0.8) !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 600px) {
+  .stats-bar__item  { flex: 1 1 calc(50% - 1px) !important; padding: 16px 12px !important; border-bottom: 1px solid rgba(168,212,180,0.1); }
+  .stats-bar__val   { font-size: clamp(18px, 5.5vw, 26px) !important; }
+  .stats-bar__label { font-size: 10px !important; }
+}
