@@ -750,11 +750,23 @@ h1,h2,h3,h4,h5,h6 {
    AMENITIES
    ---------------------------------------------------------------- */
 .amenities { background: var(--mist); }
+.amenities__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.amenities__image {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--sand-2);
+}
 .amenities__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(32px, 4vw, 60px);
-  margin-top: clamp(40px, 5vw, 72px);
+  margin-top: clamp(32px, 3vw, 48px);
 }
 .amenities__col-title {
   font-family: var(--font-display);
@@ -901,6 +913,7 @@ h1,h2,h3,h4,h5,h6 {
   .opportunity__image { aspect-ratio: 16/9; max-height: 360px; }
   .location__map { aspect-ratio: 16/9; }
   .model__grid { grid-template-columns: repeat(2, 1fr); }
+  .amenities__inner,
   .amenities__grid { grid-template-columns: 1fr; }
   .gallery__grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gallery__item { aspect-ratio: 4/3; }
