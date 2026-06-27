@@ -56,6 +56,9 @@ function OpenSpaceChart() {
 
 /* ── All 24 real project photos ── */
 const galleryImages = [
+  { src: "/images/project/arched-walkway.jpg",   label: "Arched Walkway" },
+  { src: "/images/project/townhouse-row.jpg",     label: "Villa Row" },
+  { src: "/images/project/clubhouse-exterior.jpg",label: "Clubhouse" },
   { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
   { src: "/images/project/rooftop-pool-2.jpg",    label: "Infinity Pool" },
   { src: "/images/project/entrance-gate.jpg",     label: "Entrance Gate" },
@@ -162,7 +165,7 @@ export default function LandingPage() {
           <div className="opportunity__inner">
             <div className="opportunity__image reveal">
               <div className="opportunity__image-line" />
-              <Image src="/images/project/villa-exterior.jpg" alt="Villa exterior" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/arched-walkway.jpg" alt="Arched entrance walkway" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
             </div>
             <div>
               <div className="sec-header">
@@ -476,7 +479,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="amenities__image reveal">
-              <Image src="/images/project/amphitheatre.jpg" alt="Amphitheatre" fill sizes="(max-width:900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/clubhouse-exterior.jpg" alt="Clubhouse" fill sizes="(max-width:900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </div>
