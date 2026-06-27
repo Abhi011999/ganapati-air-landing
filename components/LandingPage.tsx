@@ -93,14 +93,12 @@ export default function LandingPage() {
             style={{ objectFit: "contain", borderRadius: 7, flexShrink: 0 }}
           />
           <div className="nav__logo-divider" />
-          <div className="nav__air-pill">
-            <Image
+          <Image
               src="/air-logo.jpg"
               alt="Ganapati AIR"
-              width={100} height={34}
+              width={110} height={38}
               style={{ objectFit: "contain", display: "block" }}
             />
-          </div>
         </div>
         <div className="nav__tag">Awakenings in Reflection</div>
       </nav>
@@ -144,9 +142,7 @@ export default function LandingPage() {
           />
           <div className="hero__overlay-logos">
             <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={44} height={44} style={{ objectFit: "contain", borderRadius: 6 }} />
-            <div className="hero__overlay-air">
-              <Image src="/air-logo.jpg" alt="Ganapati AIR" width={110} height={38} style={{ objectFit: "contain" }} />
-            </div>
+            <Image src="/air-logo.jpg" alt="Ganapati AIR" width={110} height={38} style={{ objectFit: "contain", borderRadius: 4 }} />
           </div>
           <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
         </div>
@@ -502,9 +498,7 @@ export default function LandingPage() {
           <div>
             <div className="footer__brand-logo">
               <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
-              <div className="footer__air-pill">
-                <Image src="/air-logo.jpg" alt="Ganapati AIR" width={90} height={32} style={{ objectFit: "contain" }} />
-              </div>
+              <Image src="/air-logo.jpg" alt="Ganapati AIR" width={100} height={36} style={{ objectFit: "contain" }} />
             </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>

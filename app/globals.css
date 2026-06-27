@@ -1320,13 +1320,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ================================================================
    NAV AIR PILL + OVERLAY LOGOS
    ================================================================ */
-.nav__air-pill {
-  background: #0d0d0d;
-  border-radius: 6px;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-}
+.nav__air-pill { display: none; } /* removed — logo shown direct */
 
 .hero__overlay-logos {
   position: absolute;
@@ -1334,7 +1328,7 @@ h1,h2,h3,h4,h5,h6 {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(0,0,0,0.55);
+  background: rgba(255,255,255,0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 10px 14px;
@@ -1386,13 +1380,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ================================================================
    FOOTER AIR PILL + PHONE
    ================================================================ */
-.footer__air-pill {
-  background: #0d0d0d;
-  border-radius: 5px;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-}
+.footer__air-pill { display: none; } /* removed */
 .footer__rera {
   display: flex;
   align-items: flex-start;
