@@ -65,11 +65,14 @@ function Nav() {
 /* ─── Gallery images ─── */
 const galleryImages = [
   { src: "/images/project/aerial-masterplan.jpg", label: "Aerial Master Plan" },
-  { src: "/images/project/entrance-gate.jpg",     label: "Entrance" },
-  { src: "/images/project/driveway.jpg",           label: "Central Driveway" },
-  { src: "/images/project/exterior.jpg",           label: "Villa Exterior" },
-  { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
-  { src: "/images/project/bathroom.jpg",           label: "Villa Interior" },
+  { src: "/images/project/rooftop-pool.jpg",      label: "Infinity Pool" },
+  { src: "/images/project/entrance-arch.jpg",     label: "Entrance" },
+  { src: "/images/project/villa-exterior.jpg",    label: "Villa Exterior" },
+  { src: "/images/project/master-bedroom.jpg",    label: "Master Bedroom" },
+  { src: "/images/project/loft-interior.jpg",     label: "Living Space" },
+  { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
+  { src: "/images/project/landscape.jpg",         label: "Landscape" },
+  { src: "/images/project/driveway.jpg",          label: "Driveway" },
 ];
 
 /* ─── Main ─── */
@@ -111,7 +114,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="hero__right">
-          <Image src="/images/project/aerial-masterplan.jpg" alt="Ganapati AIR — aerial master plan" fill sizes="(max-width:900px) 100vw, 50vw" priority style={{ objectFit: "cover" }} />
+          <Image src="/images/project/rooftop-pool.jpg" alt="Ganapati AIR — infinity pool" fill sizes="(max-width:900px) 100vw, 50vw" priority style={{ objectFit: "cover" }} />
           <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
         </div>
       </section>
@@ -122,7 +125,7 @@ export default function LandingPage() {
           <div className="opportunity__inner">
             <div className="opportunity__image reveal">
               <div className="opportunity__image-line" />
-              <Image src="/images/project/exterior.jpg" alt="Villa exterior" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/villa-exterior.jpg" alt="Villa exterior" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
             </div>
             <div>
               <div className="sec-header">
