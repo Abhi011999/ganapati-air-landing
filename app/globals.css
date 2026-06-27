@@ -98,6 +98,11 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   gap: 10px;
 }
+.nav__logo-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(60,50,40,0.15);
+}
 .nav__logo {
   font-family: var(--font-display);
   font-size: clamp(17px, 1.4vw, 22px);
@@ -191,6 +196,16 @@ h1,h2,h3,h4,h5,h6 {
   transition: transform 8s ease;
 }
 .hero__right:hover img { transform: scale(1); }
+.hero__air-logo {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 2;
+}
 .hero__right-caption {
   position: absolute; bottom: 28px; left: 28px;
   background: rgba(247,243,236,0.85);
@@ -801,7 +816,10 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: clamp(32px, 4vw, 56px);
 }
 .footer__brand-logo {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 .footer__brand-name {
   font-family: var(--font-display);

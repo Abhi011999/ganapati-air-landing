@@ -57,7 +57,8 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__logo-wrap">
-        <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={36} height={36} style={{ objectFit: "contain", borderRadius: 6 }} />
+        <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={38} height={38} style={{ objectFit: "contain", borderRadius: 6 }} />
+        <div className="nav__logo-divider" />
         <div className="nav__logo">Ganapati <span>AIR</span></div>
       </div>
       <div className="nav__tag">Awakenings in Reflection</div>
@@ -123,6 +124,9 @@ export default function LandingPage() {
         </div>
         <div className="hero__right">
           <Image src="/images/project/rooftop-pool.jpg" alt="Ganapati AIR — infinity pool" fill sizes="(max-width:900px) 100vw, 50vw" priority style={{ objectFit: "cover" }} />
+          <div className="hero__air-logo">
+            <Image src="/air-logo.jpg" alt="Ganapati AIR" width={120} height={80} style={{ objectFit: "contain" }} />
+          </div>
           <div className="hero__right-caption">Kavaranahalli, Karnataka 562101</div>
         </div>
       </section>
@@ -492,7 +496,8 @@ export default function LandingPage() {
         <div className="footer__inner">
           <div>
             <div className="footer__brand-logo">
-              <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
+              <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={48} height={48} style={{ objectFit: "contain", borderRadius: 7 }} />
+              <Image src="/air-logo.jpg" alt="Ganapati AIR" width={72} height={48} style={{ objectFit: "contain", borderRadius: 4, background: "#111", padding: "4px 8px" }} />
             </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>
