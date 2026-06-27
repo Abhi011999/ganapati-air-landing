@@ -910,3 +910,233 @@ h1,h2,h3,h4,h5,h6 {
   .pricing__price { font-size: clamp(44px, 13vw, 72px); }
   .section { padding: clamp(56px, 12vw, 120px) 0; }
 }
+
+/* ================================================================
+   COLOUR REFRESH — richer section backgrounds
+   ================================================================ */
+
+/* Hero left gets a warm gradient wash */
+.hero__left {
+  background: linear-gradient(135deg, var(--white) 60%, #EEF4EE 100%);
+}
+
+/* Opportunity — soft sage tint */
+.opportunity {
+  background: linear-gradient(180deg, #EEF4EE 0%, var(--white) 100%);
+}
+
+/* Overview — warm sand */
+.overview {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%);
+}
+
+/* Location — fresh mist with subtle green */
+.location {
+  background: linear-gradient(160deg, #E8EEE8 0%, var(--mist) 100%);
+}
+
+/* Amenities — warm sage wash */
+.amenities {
+  background: linear-gradient(160deg, #DDE8DD 0%, var(--mist) 100%);
+}
+
+/* Gallery — sandy warm */
+.gallery {
+  background: linear-gradient(180deg, var(--sand-2) 0%, var(--sand) 100%);
+}
+
+/* Section tag colour boost */
+.sec-tag { color: var(--sage-dark); font-weight: 500; }
+
+/* Chip hover effect */
+.hero__chip {
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.hero__chip:hover {
+  background: rgba(122,158,138,0.15);
+  border-color: rgba(78,116,96,0.35);
+}
+
+/* Model cards — coloured accent on hover */
+.model__card:hover .model__card-num { color: rgba(122,158,138,0.35); }
+.model__card:hover .model__card-title { color: var(--sage-dark); }
+
+/* Returns highlights — add left border accent */
+.returns__highlight {
+  border-left: 3px solid var(--sage-light);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.returns__highlight:hover {
+  border-color: var(--sage-dark);
+  box-shadow: 0 4px 24px rgba(122,158,138,0.12);
+}
+
+/* Footer warm tint */
+.footer {
+  background: linear-gradient(180deg, var(--sand-2) 0%, #D8D0C0 100%);
+}
+
+/* ================================================================
+   INVESTMENT CALCULATOR
+   ================================================================ */
+.calc {
+  background: linear-gradient(160deg, var(--sage-dark) 0%, #2E5040 100%);
+  position: relative;
+  overflow: hidden;
+}
+.calc::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 70vw; height: 140%;
+  background: radial-gradient(ellipse at center, rgba(168,196,176,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.calc .sec-tag  { color: rgba(168,196,176,0.8); }
+.calc .sec-title { color: var(--white); }
+.calc .sec-body  { color: rgba(250,250,248,0.6); }
+
+.calc__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+  margin-top: clamp(40px, 5vw, 72px);
+}
+
+/* Controls */
+.calc__controls { display: flex; flex-direction: column; gap: clamp(28px, 3vw, 44px); }
+
+.calc__field { display: flex; flex-direction: column; gap: 10px; }
+
+.calc__field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.calc__field-label {
+  font-size: var(--sub);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(250,250,248,0.5);
+}
+.calc__field-value {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.6vw, 26px);
+  color: var(--sage-light);
+}
+
+.calc__presets { display: flex; gap: 8px; flex-wrap: wrap; }
+.calc__preset {
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(168,196,176,0.2);
+  color: rgba(168,196,176,0.55);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: none;
+}
+.calc__preset:hover,
+.calc__preset.active {
+  background: rgba(168,196,176,0.15);
+  border-color: var(--sage-light);
+  color: var(--sage-light);
+}
+
+/* Slider */
+.calc__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: rgba(250,250,248,0.15);
+  outline: none;
+  cursor: pointer;
+  border-radius: 1px;
+}
+.calc__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  cursor: pointer;
+  border: 3px solid var(--sage-dark);
+  box-shadow: 0 0 0 2px rgba(168,196,176,0.3);
+  transition: transform 0.2s ease;
+}
+.calc__slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.calc__slider::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  cursor: pointer;
+  border: 3px solid var(--sage-dark);
+}
+.calc__range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(250,250,248,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* Results panel */
+.calc__results {
+  background: rgba(250,250,248,0.06);
+  border: 1px solid rgba(250,250,248,0.1);
+  padding: clamp(28px, 3vw, 48px);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: calc(68px + 20px);
+}
+.calc__results-title {
+  font-size: var(--sub);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(250,250,248,0.3);
+  margin-bottom: 24px;
+}
+.calc__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(250,250,248,0.07);
+  gap: 12px;
+}
+.calc__row:last-of-type { border-bottom: none; }
+.calc__row-label {
+  font-size: var(--sub);
+  color: rgba(250,250,248,0.45);
+  flex: 1;
+}
+.calc__row-val {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.3vw, 21px);
+  color: var(--white);
+  text-align: right;
+  flex-shrink: 0;
+}
+.calc__row--highlight .calc__row-label { color: rgba(250,250,248,0.7); }
+.calc__row--highlight .calc__row-val   { color: var(--sage-light); font-size: clamp(18px, 1.6vw, 26px); }
+.calc__row--total    .calc__row-val    { color: var(--sage-light); font-size: clamp(20px, 1.8vw, 30px); }
+.calc__divider { height: 1px; background: rgba(250,250,248,0.12); margin: 6px 0; }
+.calc__disclaimer {
+  font-size: 11px;
+  color: rgba(250,250,248,0.25);
+  line-height: 1.6;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .calc__body { grid-template-columns: 1fr; }
+  .calc__results { position: static; }
+}

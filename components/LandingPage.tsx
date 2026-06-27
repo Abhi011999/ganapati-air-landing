@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Calculator from "./Calculator";
 
 /* ─── Reveal hook ─── */
 function useReveal() {
@@ -377,6 +378,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── CALCULATOR */}
+      <Calculator />
 
       {/* ── 8. PRICING ───────────────────────────────────────── */}
       <section className="section pricing" id="pricing">
