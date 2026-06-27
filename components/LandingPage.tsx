@@ -54,39 +54,28 @@ function OpenSpaceChart() {
   );
 }
 
-/* ── All 24 real project photos ── */
+/* ── 20 curated real project photos, zero duplicates ── */
 const galleryImages = [
-  { src: "/images/project/aerial-villas.jpg",     label: "Aerial View" },
-  { src: "/images/project/arched-walkway.jpg",    label: "Arched Walkway" },
-  { src: "/images/project/street-view-2.jpg",     label: "Street View" },
-  { src: "/images/project/clubhouse-exterior.jpg",label: "Clubhouse" },
-  { src: "/images/project/aerial-masterplan.jpg",  label: "Aerial Master Plan" },
-  { src: "/images/project/rooftop-pool-2.jpg",    label: "Infinity Pool" },
-  { src: "/images/project/entrance-gate.jpg",     label: "Entrance Gate" },
-  { src: "/images/project/townhouse-row.jpg",     label: "Villa Row" },
-  { src: "/images/project/villa-exterior.jpg",    label: "Villa Exterior" },
-  { src: "/images/project/entrance-arch.jpg",     label: "Entrance Arch" },
-  { src: "/images/project/amphitheatre.jpg",      label: "Amphitheatre" },
-  { src: "/images/project/park-sculpture.jpg",    label: "Landscaped Park" },
-  { src: "/images/project/clubhouse.jpg",         label: "Clubhouse Interior" },
-  { src: "/images/project/garden-landscape.jpg",  label: "Garden" },
-  { src: "/images/project/landscape.jpg",         label: "Landscape" },
-  { src: "/images/project/sunken-seating.jpg",    label: "Sunken Seating" },
-  { src: "/images/project/rooftop-pool.jpg",      label: "Pool Deck" },
-  { src: "/images/project/master-bedroom.jpg",    label: "Master Bedroom" },
-  { src: "/images/project/bedroom-4.jpg",         label: "Bedroom" },
-  { src: "/images/project/bedroom-2.jpg",         label: "Bedroom" },
-  { src: "/images/project/bedroom-3.jpg",         label: "Bedroom Suite" },
-  { src: "/images/project/open-living.jpg",       label: "Living Area" },
-  { src: "/images/project/loft-interior.jpg",     label: "Living Space" },
-  { src: "/images/project/living-room.jpg",       label: "Interior" },
-  { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
-  { src: "/images/project/bathroom-2.jpg",        label: "Bathroom" },
-  { src: "/images/project/powder-room.jpg",       label: "Powder Room" },
-  { src: "/images/project/driveway.jpg",          label: "Driveway" },
-  { src: "/images/project/driveway-2.jpg",        label: "Driveway" },
-  { src: "/images/project/street-walkway.jpg",    label: "Walkway" },
-  { src: "/images/project/villa-row.jpg",         label: "Villa Exteriors" },
+  { src: "/images/project/aerial-villas.jpg",      label: "Aerial View" },
+  { src: "/images/project/aerial-masterplan.jpg",  label: "Master Plan" },
+  { src: "/images/project/arched-walkway.jpg",     label: "Arched Walkway" },
+  { src: "/images/project/entrance-gate.jpg",      label: "Entrance" },
+  { src: "/images/project/villa-exterior.jpg",     label: "Villa Exterior" },
+  { src: "/images/project/rooftop-pool-2.jpg",     label: "Infinity Pool" },
+  { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
+  { src: "/images/project/park-sculpture.jpg",     label: "Landscaped Park" },
+  { src: "/images/project/garden-landscape.jpg",   label: "Garden" },
+  { src: "/images/project/clubhouse-exterior.jpg", label: "Clubhouse" },
+  { src: "/images/project/sunken-seating.jpg",     label: "Sunken Seating" },
+  { src: "/images/project/street-view-2.jpg",      label: "Street View" },
+  { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
+  { src: "/images/project/bedroom-4.jpg",          label: "Bedroom" },
+  { src: "/images/project/open-living.jpg",        label: "Living Area" },
+  { src: "/images/project/loft-interior.jpg",      label: "Living Space" },
+  { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
+  { src: "/images/project/powder-room.jpg",        label: "Powder Room" },
+  { src: "/images/project/driveway-2.jpg",         label: "Driveway" },
+  { src: "/images/project/rooftop-pool.jpg",       label: "Pool Deck" },
 ];
 
 export default function LandingPage() {
@@ -168,8 +157,7 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="opportunity__inner">
             <div className="opportunity__image reveal">
-              <div className="opportunity__image-line" />
-              <Image src="/images/project/aerial-villas.jpg" alt="Aerial view of Ganapati AIR" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/project/aerial-villas.jpg" alt="Aerial view of Ganapati AIR" fill sizes="(max-width:900px) 100vw, 40vw" style={{ objectFit: "cover", borderRadius: "2px" }} />
             </div>
             <div>
               <div className="sec-header">
