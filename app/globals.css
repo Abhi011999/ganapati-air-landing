@@ -1336,3 +1336,111 @@ h1,h2,h3,h4,h5,h6 {
 /* Footer brand name */
 .footer__brand-name { color: var(--sage-dark); }
 .footer__brand-tag  { color: var(--sage); }
+
+/* ================================================================
+   NAV AIR PILL + OVERLAY LOGOS
+   ================================================================ */
+.nav__air-pill {
+  background: #0d0d0d;
+  border-radius: 6px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__overlay-logos {
+  position: absolute;
+  top: 20px; right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 2;
+}
+.hero__overlay-air {
+  background: #0d0d0d;
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* ================================================================
+   RERA BADGE
+   ================================================================ */
+.rera-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: rgba(78,116,96,0.08);
+  border: 1px solid rgba(78,116,96,0.2);
+  border-left: 3px solid var(--sage-dark);
+}
+.rera-badge svg {
+  width: 18px; height: 18px;
+  stroke: var(--sage-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.rera-badge__label {
+  font-size: var(--sub);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--sage-dark);
+  margin-bottom: 4px;
+}
+.rera-badge__number {
+  font-size: var(--sub);
+  color: var(--stone);
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   FOOTER AIR PILL + PHONE
+   ================================================================ */
+.footer__air-pill {
+  background: #0d0d0d;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+.footer__rera {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--sub);
+  color: var(--stone);
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.footer__rera svg {
+  width: 14px; height: 14px;
+  stroke: var(--sage-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer__phone {
+  margin-top: 8px;
+  font-size: var(--sub);
+}
+.footer__phone a {
+  color: var(--sage-dark);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+.footer__phone a:hover { color: var(--sage); }
+
+@media (max-width: 600px) {
+  .hero__overlay-logos { top: 12px; right: 12px; padding: 7px 10px; gap: 7px; }
+  .rera-badge { padding: 12px 14px; }
+  .rera-badge__number { font-size: 10px; }
+}
