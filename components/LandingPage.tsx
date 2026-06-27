@@ -543,7 +543,7 @@ export default function LandingPage() {
 
         </div>
         <div className="footer__credit">
-          <span>2026 Developed by</span>
+          <span>DVP —</span>
           <a href="https://socialmusketeers.in" target="_blank" rel="noopener noreferrer">socialmusketeers.in</a>
         </div>
       </footer>
