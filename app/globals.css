@@ -1213,3 +1213,127 @@ h1,h2,h3,h4,h5,h6 {
   .calc__body { grid-template-columns: 1fr; }
   .calc__results { position: static; }
 }
+
+/* ================================================================
+   MOBILE SIZE TIGHTENING
+   ================================================================ */
+@media (max-width: 600px) {
+  /* Tighter section padding on mobile */
+  .section { padding: 48px 0; }
+
+  /* Smaller headings */
+  .sec-title  { font-size: clamp(24px, 7.5vw, 36px); }
+  .sec-body   { font-size: 14px; }
+  .sec-tag    { font-size: 10px; letter-spacing: 0.18em; }
+
+  /* Hero tighter */
+  .hero__eyebrow  { font-size: 10px; }
+  .hero__title    { font-size: clamp(32px, 10vw, 48px); }
+  .hero__subtitle { font-size: clamp(15px, 4.5vw, 20px); }
+  .hero__desc     { font-size: 13px; line-height: 1.7; }
+  .hero__chip     { font-size: 10px; padding: 6px 10px; gap: 5px; }
+  .hero__right    { aspect-ratio: 3/2; min-height: 200px; }
+
+  /* Nav smaller */
+  .nav { height: 56px; padding: 0 16px; }
+
+  /* Model cards compact */
+  .model__card        { padding: 20px 16px; gap: 10px; }
+  .model__card-num    { font-size: 36px; }
+  .model__card-title  { font-size: 16px; }
+  .model__card-desc   { font-size: 13px; }
+
+  /* Returns table font */
+  .returns__table thead th,
+  .returns__table tbody td { font-size: 12px; padding: 9px 10px; }
+  .returns__highlight-val   { font-size: clamp(22px, 7vw, 34px); }
+  .returns__highlight-label { font-size: 10px; }
+
+  /* Pricing */
+  .pricing__price       { font-size: clamp(36px, 11vw, 56px); }
+  .pricing__price-label { font-size: 11px; }
+  .pricing__payment     { padding: 20px; }
+
+  /* Calculator */
+  .calc__field-value  { font-size: 18px; }
+  .calc__field-label  { font-size: 10px; }
+  .calc__results      { padding: 20px; }
+  .calc__results-title{ font-size: 10px; }
+  .calc__row-val      { font-size: 15px; }
+  .calc__row--total .calc__row-val { font-size: 20px; }
+
+  /* Location facts */
+  .location__fact-title { font-size: 15px; }
+  .location__fact-desc  { font-size: 12px; }
+
+  /* Gallery */
+  .gallery__grid     { gap: 4px; grid-auto-rows: 180px; }
+  .gallery__label    { font-size: 9px; padding: 4px 8px; }
+
+  /* Open space */
+  .openspace__stat-num   { font-size: clamp(36px, 11vw, 60px); }
+  .openspace__pill       { font-size: 10px; padding: 5px 10px; }
+
+  /* Footer */
+  .footer__brand-name { font-size: clamp(20px, 6vw, 28px); }
+  .footer__col-item   { font-size: 12px; }
+  .footer__disclaimer { font-size: 10px; }
+  .footer__credit     { font-size: 10px; }
+
+  /* Overview table */
+  .overview__table thead th,
+  .overview__table tbody td { font-size: 12px; padding: 9px 10px; }
+}
+
+/* ================================================================
+   COLOUR BOOST
+   ================================================================ */
+
+/* Hero eyebrow — gold-green */
+.hero__eyebrow { color: var(--sage-dark); font-weight: 500; letter-spacing: 0.2em; }
+
+/* Hero title accent */
+.hero__title { color: var(--stone-dark); }
+
+/* Stronger section tag */
+.sec-tag { font-weight: 600; letter-spacing: 0.2em; }
+
+/* Opportunity section — visible sage strip on left of image */
+.opportunity__image-line {
+  background: linear-gradient(to bottom, var(--sage-light), var(--sage-dark), var(--sage-light));
+  opacity: 0.8;
+}
+
+/* Overview bullets — sage filled */
+.overview__bullet { background: var(--sage-dark); width: 7px; height: 7px; }
+
+/* Open space number — brighter */
+.openspace__stat-num { color: #C8E0CC; }
+
+/* Model section background — warm white with subtle sage tint */
+.model { background: linear-gradient(180deg, #F0F5F0 0%, var(--white) 100%); }
+
+/* Model card number — more visible */
+.model__card-num { color: rgba(122,158,138,0.2); }
+.model__card:hover .model__card-num { color: rgba(78,116,96,0.25); }
+
+/* Returns section — sandy with warm contrast */
+.returns { background: linear-gradient(180deg, var(--sand) 0%, #E8E0D0 100%); }
+.returns__highlight-val { color: var(--sage-dark); }
+.returns__table tbody tr:last-child td { color: var(--sage-dark); font-weight: 500; }
+
+/* Pricing includes tick — sage green */
+.pricing__include-item svg { stroke: var(--sage-light); }
+
+/* Amenities col title border */
+.amenities__col-title { border-bottom: 2px solid var(--sage); }
+
+/* Location facts icon circle — more saturated */
+.location__fact-icon { background: rgba(78,116,96,0.12); border: 1px solid rgba(78,116,96,0.2); }
+
+/* Nav logo text — richer */
+.nav__logo span { color: var(--sage-dark); font-weight: 400; }
+
+/* Footer brand name */
+.footer__brand-name { color: var(--sage-dark); }
+.footer__brand-tag  { color: var(--sage); }
