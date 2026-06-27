@@ -160,6 +160,28 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* STATS BAR */}
+      <section className="stats-bar">
+        <div className="wrap">
+          <div className="stats-bar__inner">
+            {[
+              { val: "6.5", unit: "Acres",  label: "Land Parcel" },
+              { val: "56",  unit: "",       label: "Villas" },
+              { val: "54",  unit: "%",      label: "Open & Green" },
+              { val: "2 BHK", unit: "",    label: "with Private Pool" },
+              { val: "RERA", unit: "",     label: "Approved" },
+              { val: "CUDA", unit: "",     label: "Approved" },
+              { val: "E-Khata", unit: "",  label: "Clear Title" },
+            ].map((s) => (
+              <div key={s.label} className="stats-bar__item">
+                <span className="stats-bar__val">{s.val}<span className="stats-bar__unit">{s.unit}</span></span>
+                <span className="stats-bar__label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 2. OPPORTUNITY */}
       <section className="section opportunity" id="opportunity">
         <div className="wrap">
@@ -183,6 +205,34 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY DIFFERENT */}
+      <section className="section whydiff" id="why-different">
+        <div className="wrap">
+          <div className="sec-header" style={{ maxWidth: 600 }}>
+            <span className="sec-tag reveal">What Sets Us Apart</span>
+            <h2 className="sec-title reveal-line"><span>Not just a villa.<br/>A managed investment.</span></h2>
+          </div>
+          <div className="whydiff__grid">
+            {[
+              { n: "01", t: "Fully Furnished",       d: "Move-in ready with curated furniture, fittings, and white goods. Nothing to source, nothing to arrange." },
+              { n: "02", t: "Professionally Managed", d: "A dedicated hospitality operator handles bookings, guests, upkeep, and daily operations for you." },
+              { n: "03", t: "Rental Income",          d: "Earn consistent revenue from every guest booking without any involvement. Income flows to you automatically." },
+              { n: "04", t: "Long-term Appreciation", d: "Prime location near Isha Foundation with rapidly developing infrastructure means your asset grows in value." },
+              { n: "05", t: "Hands-free Ownership",   d: "Own luxury real estate without any operational burden. Your villa runs itself. Your money works for you." },
+            ].map((c) => (
+              <div key={c.n} className="whydiff__card reveal">
+                <div className="whydiff__num">{c.n}</div>
+                <div className="whydiff__title">{c.t}</div>
+                <div className="whydiff__desc">{c.d}</div>
+              </div>
+            ))}
+          </div>
+          <div className="whydiff__badge reveal">
+            <span>Own</span><span className="whydiff__dot" /><span>Earn</span><span className="whydiff__dot" /><span>Appreciate</span>
           </div>
         </div>
       </section>
@@ -371,6 +421,36 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
+      <section className="section howitworks" id="how-it-works">
+        <div className="wrap">
+          <div className="sec-header" style={{ maxWidth: 600 }}>
+            <span className="sec-tag reveal">How It Works</span>
+            <h2 className="sec-title reveal-line"><span>The revenue<br/>share model.</span></h2>
+            <p className="sec-body reveal">A simple, transparent model designed to make your villa work for you from day one.</p>
+          </div>
+          <div className="howitworks__steps">
+            {[
+              { n: "01", t: "You buy the villa",              d: "Secure your fully furnished 2 BHK villa with a private pool at Rs. 2.68 Cr, turnkey." },
+              { n: "02", t: "Villa is fully ready",           d: "Furnished, fitted with white goods, landscaped, and completely turnkey upon possession." },
+              { n: "03", t: "Operator takes over",           d: "A dedicated hospitality company handles all bookings, guest services, and upkeep." },
+              { n: "04", t: "Guests book and stay",          d: "Travellers and spiritual seekers near Isha Foundation fill your villa year-round." },
+              { n: "05", t: "Revenue shared 50:50",          d: "Net rental proceeds split equally between you and the operator. Transparent, agreed upfront.", highlight: true },
+              { n: "06", t: "You earn while asset grows",    d: "Passive rental income every month, plus long-term capital appreciation in a prime corridor." },
+            ].map((s, i) => (
+              <div key={s.n} className={`howitworks__step reveal${(s as {highlight?: boolean}).highlight ? " howitworks__step--hl" : ""}`}>
+                <div className="howitworks__step-num">{s.n}</div>
+                <div className="howitworks__step-body">
+                  <div className="howitworks__step-title">{s.t}</div>
+                  <div className="howitworks__step-desc">{s.d}</div>
+                </div>
+                {i < 5 && <div className="howitworks__connector" />}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 7. RETURNS */}
       <section className="section returns" id="returns">
         <div className="wrap">
@@ -466,6 +546,37 @@ export default function LandingPage() {
                 Construction-linked plan details available on request.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INFRASTRUCTURE */}
+      <section className="section infra" id="infrastructure">
+        <div className="wrap">
+          <div className="sec-header" style={{ maxWidth: 600 }}>
+            <span className="sec-tag reveal">Infrastructure</span>
+            <h2 className="sec-title reveal-line"><span>Built with care.<br/>Designed to last.</span></h2>
+            <p className="sec-body reveal">Every layer of infrastructure planned for longevity, sustainability, and quiet comfort.</p>
+          </div>
+          <div className="infra__grid">
+            {[
+              { n: "01", t: "Security",              d: "Gated community with 24/7 manned security, CCTV surveillance, and controlled access." },
+              { n: "02", t: "Water Supply",          d: "Dedicated borewell and overhead tank with pressurized distribution to every villa." },
+              { n: "03", t: "Electricity",           d: "BESCOM-approved infrastructure with dedicated transformer and underground cabling." },
+              { n: "04", t: "Service Connections",   d: "Underground utility ducting for water, electricity, and communication lines to every plot." },
+              { n: "05", t: "Street Lighting",       d: "Energy-efficient LED lighting across all internal roads and common areas." },
+              { n: "06", t: "Rainwater Harvesting",  d: "Integrated pits across the layout for sustainable groundwater recharge." },
+              { n: "07", t: "Sewage Treatment",      d: "On-site STP for eco-friendly waste processing with treated water reused for landscaping." },
+              { n: "08", t: "Fibre-ready",           d: "High-speed internet, DTH, and intercom infrastructure ready for every villa." },
+            ].map((f) => (
+              <div key={f.n} className="infra__item reveal">
+                <span className="infra__num">{f.n}</span>
+                <div>
+                  <div className="infra__title">{f.t}</div>
+                  <div className="infra__desc">{f.d}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
