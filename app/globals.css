@@ -754,7 +754,7 @@ h1,h2,h3,h4,h5,h6 {
 .gallery__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, clamp(180px, 20vw, 300px));
+  grid-auto-rows: clamp(160px, 18vw, 280px);
   gap: clamp(6px, 0.8vw, 12px);
   margin-top: clamp(40px, 5vw, 72px);
 }
@@ -764,6 +764,9 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--sand-2);
 }
 .gallery__item:first-child {
+  grid-row: span 2;
+}
+.gallery__item:nth-child(4) {
   grid-row: span 2;
 }
 .gallery__item img {

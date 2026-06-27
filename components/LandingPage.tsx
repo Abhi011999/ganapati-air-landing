@@ -73,6 +73,7 @@ const galleryImages = [
   { src: "/images/project/bathroom.jpg",          label: "Bathroom" },
   { src: "/images/project/landscape.jpg",         label: "Landscape" },
   { src: "/images/project/driveway.jpg",          label: "Driveway" },
+  { src: "/images/project/street-walkway.jpg",    label: "Street View" },
 ];
 
 /* ─── Main ─── */
