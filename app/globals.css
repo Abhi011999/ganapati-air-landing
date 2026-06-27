@@ -1584,3 +1584,22 @@ h1,h2,h3,h4,h5,h6 {
   .openspace__green-cell { padding: 14px 12px; }
   .footer__rera-badge-num { font-size: 11px; }
 }
+
+/* ================================================================
+   NAV LOGO CONTAINERS — visible over dark hero
+   ================================================================ */
+.nav__logo-bg {
+  background: rgba(255,255,255,0.92);
+  border-radius: 7px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.nav__air-bg {
+  background: rgba(255,255,255,0.92);
+  border-radius: 6px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+}

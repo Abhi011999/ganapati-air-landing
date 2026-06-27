@@ -86,19 +86,23 @@ export default function LandingPage() {
       {/* NAV */}
       <nav className="nav">
         <div className="nav__logo-wrap">
-          <Image
-            src="/ganapati-logo.jpg"
-            alt="Ganapati Builders"
-            width={40} height={40}
-            style={{ objectFit: "contain", borderRadius: 7, flexShrink: 0 }}
-          />
+          <div className="nav__logo-bg">
+            <Image
+              src="/ganapati-logo.jpg"
+              alt="Ganapati Builders"
+              width={36} height={36}
+              style={{ objectFit: "contain", borderRadius: 6, flexShrink: 0, display: "block" }}
+            />
+          </div>
           <div className="nav__logo-divider" />
-          <Image
+          <div className="nav__air-bg">
+            <Image
               src="/air-logo.jpg"
               alt="Ganapati AIR"
-              width={110} height={38}
+              width={100} height={34}
               style={{ objectFit: "contain", display: "block" }}
             />
+          </div>
         </div>
         <div className="nav__tag">Awakenings in Reflection</div>
       </nav>
@@ -108,7 +112,7 @@ export default function LandingPage() {
         {/* Full-bleed background image */}
         <div className="hero__bg">
           <Image
-            src="/images/project/rooftop-pool-2.jpg"
+            src="/images/project/arched-walkway.jpg"
             alt="Ganapati AIR infinity pool"
             fill sizes="100vw"
             priority style={{ objectFit: "cover" }}
