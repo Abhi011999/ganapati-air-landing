@@ -903,7 +903,7 @@ h1,h2,h3,h4,h5,h6 {
   border-top: 1px solid var(--sand-3);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
   font-size: 11px;
   color: var(--stone);
