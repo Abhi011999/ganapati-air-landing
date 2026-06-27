@@ -71,25 +71,21 @@ function OpenSpaceChart() {
   );
 }
 
-/* ── 17 curated real project photos, zero duplicates ── */
+/* ── 13 curated unique photos ── */
 const galleryImages = [
   { src: "/images/project/aerial-villas.jpg",      label: "Aerial View" },
-  { src: "/images/project/arched-walkway.jpg",     label: "Arched Walkway" },
   { src: "/images/project/entrance-gate.jpg",      label: "Entrance" },
   { src: "/images/project/villa-exterior.jpg",     label: "Villa Exterior" },
   { src: "/images/project/rooftop-pool-2.jpg",     label: "Infinity Pool" },
+  { src: "/images/project/street-view-2.jpg",      label: "Street View" },
   { src: "/images/project/amphitheatre.jpg",       label: "Amphitheatre" },
   { src: "/images/project/park-sculpture.jpg",     label: "Landscaped Park" },
   { src: "/images/project/garden-landscape.jpg",   label: "Garden" },
   { src: "/images/project/clubhouse-exterior.jpg", label: "Clubhouse" },
   { src: "/images/project/sunken-seating.jpg",     label: "Sunken Seating" },
-  { src: "/images/project/street-view-2.jpg",      label: "Street View" },
-  { src: "/images/project/master-bedroom.jpg",     label: "Master Bedroom" },
   { src: "/images/project/bedroom-4.jpg",          label: "Bedroom" },
   { src: "/images/project/open-living.jpg",        label: "Living Area" },
   { src: "/images/project/bathroom.jpg",           label: "Bathroom" },
-  { src: "/images/project/powder-room.jpg",        label: "Powder Room" },
-  { src: "/images/project/driveway-2.jpg",         label: "Driveway" },
 ];
 
 export default function LandingPage() {
