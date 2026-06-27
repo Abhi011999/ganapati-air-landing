@@ -2182,3 +2182,128 @@ h1,h2,h3,h4,h5,h6 {
   .calc__occ-tabs { gap: 6px; }
   .calc__occ-tab-pct { font-size: 18px; }
 }
+
+/* ================================================================
+   MOBILE OVERHAUL — full section-by-section responsive pass
+   ================================================================ */
+@media (max-width: 600px) {
+
+  /* ── Global ── */
+  :root { --pad: 18px; }
+  .section { padding: 52px 0; }
+  .sec-tag  { font-size: 10px !important; letter-spacing: 0.18em; padding: 4px 10px; }
+  .sec-title { font-size: clamp(26px, 8.5vw, 40px) !important; line-height: 1.08; }
+  .sec-body  { font-size: 15px !important; line-height: 1.75; }
+
+  /* ── Hero ── */
+  .hero__content { padding: 36px 18px 72px; }
+  .hero__eyebrow { font-size: 10px; letter-spacing: 0.2em; }
+  .hero__title   { font-size: clamp(40px, 12.5vw, 64px) !important; }
+  .hero__subtitle{ font-size: clamp(17px, 5vw, 24px) !important; }
+  .hero__desc    { font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
+  .hero__chips   { gap: 6px; }
+  .hero__chip    { font-size: 11px; padding: 7px 11px; gap: 5px; }
+  .hero__chip svg{ width: 11px; height: 11px; }
+  .hero__scroll-hint { display: none; }
+  .hero__location-tag{ display: none; }
+
+  /* ── Opportunity ── */
+  .opportunity__inner { gap: 28px; }
+  .opportunity__image { aspect-ratio: 4/3; max-height: 260px; }
+
+  /* ── Overview ── */
+  .overview__grid { gap: 28px; }
+  .overview__list-item { font-size: 14px; gap: 10px; }
+  .rera-badge { padding: 12px 14px; gap: 10px; }
+  .rera-badge__number { font-size: 11px; letter-spacing: 0.02em; }
+  .overview__table { font-size: 13px; }
+  .overview__table thead th,
+  .overview__table tbody td { padding: 10px 12px; }
+
+  /* ── Location ── */
+  .location__inner { gap: 28px; }
+  .location__map   { min-height: 220px; }
+  .location__fact  { gap: 12px; }
+  .location__fact-title { font-size: 14px; }
+  .location__fact-desc  { font-size: 13px; }
+  .location__facts { gap: 16px; }
+
+  /* ── Open space ── */
+  .openspace__bar-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .openspace__bar-name { width: 100%; text-align: left; font-size: 11px; }
+  .openspace__bar-track { height: 44px; width: 100%; }
+  .openspace__bar-fill { font-size: 11px; }
+  .openspace__bars { gap: 20px; }
+  .openspace__benefits { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .openspace__benefit  { padding: 18px 12px; }
+  .openspace__benefit-icon  { font-size: 24px !important; margin-bottom: 8px; }
+  .openspace__benefit-title { font-size: 11px !important; }
+  .openspace__benefit-desc  { font-size: 12px !important; }
+
+  /* ── Model ── */
+  .model__grid { grid-template-columns: 1fr; gap: 12px; }
+  .model__card { padding: 22px 18px; gap: 10px; }
+  .model__card-num   { font-size: 32px; }
+  .model__card-title { font-size: 17px; }
+  .model__card-desc  { font-size: 13px; }
+  .model__note { font-size: 12px; padding: 14px 16px; }
+
+  /* ── Returns ── */
+  .returns__inner { gap: 24px; }
+  .returns__highlights { flex-direction: column; gap: 10px; }
+  .returns__highlight  { padding: 18px 16px; }
+  .returns__highlight-val   { font-size: clamp(24px, 8vw, 36px) !important; }
+  .returns__highlight-label { font-size: 10px; }
+  .returns__highlight-note  { font-size: 12px; }
+  .returns__table thead th,
+  .returns__table tbody td  { font-size: 12px; padding: 9px 10px; }
+  .returns__disclaimer { font-size: 11px; }
+
+  /* ── Calculator ── */
+  .calc__bento { gap: 10px; }
+  .calc__card  { padding: 20px 16px; }
+  .calc__card-label { font-size: 10px; margin-bottom: 14px; }
+  .calc__occ-tab { padding: 10px 12px; }
+  .calc__occ-tab-pct  { font-size: 18px; }
+  .calc__occ-tab-name { font-size: 10px; }
+  .calc__horizon-num  { font-size: clamp(44px, 14vw, 68px); margin-bottom: 16px; }
+  .calc__hero-num     { font-size: clamp(32px, 9vw, 52px) !important; }
+  .calc__income-sub   { font-size: 11px; }
+  .calc__bar-label    { font-size: 11px; }
+  .calc__disclaimer   { font-size: 11px; margin-top: 16px; }
+
+  /* ── Pricing ── */
+  .pricing__inner { gap: 28px; }
+  .pricing__price { font-size: clamp(36px, 11vw, 56px) !important; }
+  .pricing__price-label { font-size: 12px; }
+  .pricing__includes { gap: 10px; margin-top: 20px; }
+  .pricing__include-item { font-size: 14px; }
+  .pricing__payment { padding: 20px 16px; margin-top: 0; }
+  .pricing__payment-title { font-size: 12px; margin-bottom: 14px; }
+  .pricing__payment-item  { padding: 12px 0; font-size: 14px; }
+
+  /* ── Amenities ── */
+  .amenities__inner { gap: 24px; }
+  .amenities__image { aspect-ratio: 4/3; min-height: 220px; }
+  .amenities__col-title { font-size: 11px; }
+  .amenities__item { font-size: 14px; }
+
+  /* ── Gallery ── */
+  .gallery__grid { gap: 10px; grid-auto-rows: 240px; }
+
+  /* ── Footer ── */
+  .footer__brand-name { font-size: clamp(20px, 6vw, 28px); }
+  .footer__brand-tag  { font-size: 12px; }
+  .footer__rera-badge { padding: 12px 14px; }
+  .footer__rera-badge-label { font-size: 10px; }
+  .footer__rera-badge-num   { font-size: 11px; }
+  .footer__col-title  { font-size: 10px; }
+  .footer__col-item   { font-size: 13px; }
+  .footer__disclaimer { font-size: 11px; line-height: 1.6; }
+  .footer__credit     { font-size: 11px; }
+
+  /* ── Nav ── */
+  .nav { height: 58px; padding: 0 16px; }
+  .nav__logo-bg img { width: 32px !important; height: 32px !important; }
+  .nav__air-bg img  { width: 88px !important; height: 30px !important; }
+}
