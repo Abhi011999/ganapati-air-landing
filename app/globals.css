@@ -1399,16 +1399,37 @@ h1,h2,h3,h4,h5,h6 {
 .footer__phone {
   margin-top: 8px;
   font-size: var(--sub);
-}
-.footer__phone a {
+  font-weight: 600;
   color: var(--sage-dark);
-  font-weight: 500;
-  transition: color 0.25s ease;
+  letter-spacing: 0.04em;
 }
-.footer__phone a:hover { color: var(--sage); }
 
 @media (max-width: 600px) {
   .hero__overlay-logos { top: 12px; right: 12px; padding: 7px 10px; gap: 7px; }
   .rera-badge { padding: 12px 14px; }
   .rera-badge__number { font-size: 10px; }
 }
+
+/* Map link */
+.footer__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--sage-dark);
+  font-weight: 500;
+  font-size: var(--sub);
+  border-bottom: 1px solid rgba(78,116,96,0.3);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer__map-link svg {
+  width: 12px; height: 12px;
+  stroke: var(--sage-dark);
+  flex-shrink: 0;
+  transition: stroke 0.2s ease;
+}
+.footer__map-link:hover {
+  color: var(--sage);
+  border-color: var(--sage);
+}
+.footer__map-link:hover svg { stroke: var(--sage); }

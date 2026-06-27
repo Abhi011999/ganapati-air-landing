@@ -503,7 +503,7 @@ export default function LandingPage() {
               RERA Reg. No.: PRM/KA/RERA/1254/460/PR/161225/008340
             </div>
             <div className="footer__phone">
-              <a href="tel:+919353742442">+91 93537 42442</a>
+              <span>+91 93537 42442</span>
             </div>
           </div>
           <div>
@@ -513,7 +513,10 @@ export default function LandingPage() {
             <div className="footer__col-item">Possession in approximately 3 Years</div>
             <div className="footer__col-item" style={{ marginTop: 16 }}>FPMJ+953, Kavaranahalli,<br />Karnataka 562101</div>
             <div className="footer__col-item">
-              <a href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+              <a href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA" target="_blank" rel="noopener noreferrer" className="footer__map-link">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5z"/><circle cx="8" cy="6" r="1.8"/></svg>
+                View on Google Maps
+              </a>
             </div>
           </div>
         </div>
@@ -524,7 +527,7 @@ export default function LandingPage() {
             guaranteed or assured returns. This page is for informational purposes only.
             Detailed brochure coming soon.
           </p>
-          <div className="footer__coming-soon">Brochure Coming Soon</div>
+
         </div>
         <div className="footer__credit">
           <span>2026 Developed by</span>
