@@ -127,14 +127,14 @@ export default function LandingPage() {
 
       {/* 1. HERO */}
       <section className="hero" id="hero">
-        {/* Full-bleed background image */}
-        <div className="hero__bg">
-          <Image
-            src="/images/project/rooftop-pool-2.jpg"
-            alt="Ganapati AIR infinity pool"
-            fill sizes="100vw"
-            priority style={{ objectFit: "cover" }}
-          />
+        {/* 2-image sliding hero */}
+        <div className="hero__slider">
+          <div className="hero__slide hero__slide--1">
+            <Image src="/images/project/rooftop-pool-2.jpg" alt="Ganapati AIR infinity pool" fill sizes="100vw" priority style={{ objectFit: "cover" }} />
+          </div>
+          <div className="hero__slide hero__slide--2">
+            <Image src="/images/project/villa-exterior.jpg" alt="Ganapati AIR villa" fill sizes="100vw" style={{ objectFit: "cover" }} />
+          </div>
         </div>
         {/* Gradient overlay */}
         <div className="hero__overlay" />
