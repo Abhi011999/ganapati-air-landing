@@ -52,11 +52,14 @@ function OpenSpaceChart() {
   );
 }
 
-/* ─── Nav ─── */
+/* ── Nav ── */
 function Nav() {
   return (
     <nav className="nav">
-      <div className="nav__logo">Ganapati <span>AIR</span></div>
+      <div className="nav__logo-wrap">
+        <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={36} height={36} style={{ objectFit: "contain", borderRadius: 6 }} />
+        <div className="nav__logo">Ganapati <span>AIR</span></div>
+      </div>
       <div className="nav__tag">Awakenings in Reflection</div>
     </nav>
   );
@@ -488,6 +491,9 @@ export default function LandingPage() {
       <footer className="footer">
         <div className="footer__inner">
           <div>
+            <div className="footer__brand-logo">
+              <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
+            </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>
             <div className="footer__rera">
