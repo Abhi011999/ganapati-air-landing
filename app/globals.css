@@ -1831,30 +1831,18 @@ h1,h2,h3,h4,h5,h6 {
    NAV LOGO CONTAINERS — visible over dark hero
    ================================================================ */
 .nav__logo-bg {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(4px);
-  border-radius: 7px;
-  padding: 4px;
+  background: transparent;
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.nav--scrolled .nav__logo-bg {
-  background: transparent;
-  backdrop-filter: none;
-}
+.nav__logo-bg img { height: 40px !important; width: auto !important; }
 .nav__air-bg {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(4px);
-  border-radius: 6px;
-  padding: 4px 8px;
+  background: transparent;
   display: flex;
   align-items: center;
 }
-.nav--scrolled .nav__air-bg {
-  background: transparent;
-  backdrop-filter: none;
-}
+.nav__air-bg img { height: 52px !important; width: auto !important; }
 
 /* ================================================================
    HERO SLIDER — 2 images, slides left every 5s
@@ -2542,8 +2530,8 @@ h1,h2,h3,h4,h5,h6 {
 
   /* ── Nav ── */
   .nav { height: 58px; padding: 0 16px; }
-  .nav__logo-bg img { width: 44px !important; height: 44px !important; }
-  .nav__air-bg img  { width: 66px !important; height: 88px !important; }
+  .nav__logo-bg img { height: 34px !important; width: auto !important; }
+  .nav__air-bg img  { height: 44px !important; width: auto !important; }
 }
 
 /* ================================================================

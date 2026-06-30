@@ -117,8 +117,8 @@ export default function LandingPage() {
             <Image
               src="/ganapati-logo.png"
               alt="Ganapati Builders"
-              width={48} height={48}
-              style={{ objectFit: "contain", borderRadius: 6, flexShrink: 0, display: "block" }}
+              width={66} height={44}
+              style={{ objectFit: "contain", display: "block" }}
             />
           </div>
           <div className="nav__logo-divider" />
@@ -126,7 +126,7 @@ export default function LandingPage() {
             <Image
               src="/air-logo.png"
               alt="Ganapati AIR"
-              width={72} height={96}
+              width={80} height={108}
               style={{ objectFit: "contain", display: "block" }}
             />
           </div>
