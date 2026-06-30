@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import Calculator from "./Calculator";
 
@@ -71,7 +71,8 @@ function OpenSpaceChart() {
   );
 }
 
-/* ── 13 curated unique photos ── */
+/* ── Lightbox state ── */
+/* ── 12 curated unique photos ── */
 const galleryImages = [
   { src: "/images/project/aerial-villas.jpg",      label: "Aerial View" },
   { src: "/images/project/entrance-gate.jpg",      label: "Entrance" },
@@ -90,6 +91,22 @@ const galleryImages = [
 export default function LandingPage() {
   useReveal();
   useScrollNav();
+
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const prevImg = useCallback(() => setLightbox((p) => p !== null ? (p - 1 + galleryImages.length) % galleryImages.length : 0), []);
+  const nextImg = useCallback(() => setLightbox((p) => p !== null ? (p + 1) % galleryImages.length : 0), []);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImg();
+      if (e.key === "ArrowRight") nextImg();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [lightbox, closeLightbox, prevImg, nextImg]);
 
   return (
     <>
@@ -119,9 +136,10 @@ export default function LandingPage() {
 
       {/* 1. HERO */}
       <section className="hero" id="hero">
-        {/* Hero background — villa exterior */}
+        {/* Hero background — responsive */}
         <div className="hero__bg">
-          <Image src="/images/project/villa-exterior.jpg" alt="Ganapati AIR villa" fill sizes="100vw" priority style={{ objectFit: "cover" }} />
+          <Image src="/images/hero-mobile.png" alt="Ganapati AIR villa" fill sizes="100vw" priority style={{ objectFit: "cover" }} className="block md:hidden" />
+          <Image src="/images/hero-desktop.jpg" alt="Ganapati AIR villa" fill sizes="100vw" priority style={{ objectFit: "cover" }} className="hidden md:block" />
         </div>
         {/* Gradient overlay */}
         <div className="hero__overlay" />
@@ -291,14 +309,7 @@ export default function LandingPage() {
       <section className="section location" id="location">
         <div className="wrap">
           <div className="location__inner">
-            <div className="location__map reveal">
-              <iframe
-                title="Ganapati AIR Location"
-                src="https://maps.google.com/maps?q=FPMJ%2B953,+Kavaranahalli,+Karnataka+562101&output=embed&z=15"
-                style={{ border: 0, position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+
             <div>
               <div className="sec-header">
                 <span className="sec-tag reveal">Location and Connectivity</span>
@@ -631,15 +642,55 @@ export default function LandingPage() {
             <p className="sec-body reveal">Every space. Every detail.</p>
           </div>
           <div className="gallery__grid">
-            {galleryImages.map((img) => (
-              <div key={img.src} className="gallery__item reveal">
+            {galleryImages.map((img, i) => (
+              <button
+                key={img.src}
+                type="button"
+                className={`gallery__item reveal gallery__item--${i}`}
+                onClick={() => setLightbox(i)}
+                aria-label={`Preview ${img.label}`}
+              >
                 <Image src={img.src} alt={img.label} fill sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 33vw" style={{ objectFit: "cover" }} />
-                <div className="gallery__label">{img.label}</div>
-              </div>
+                <div className="gallery__overlay">
+                  <div className="gallery__zoom">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="7" />
+                      <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                      <line x1="11" y1="8" x2="11" y2="14" />
+                      <line x1="8" y1="11" x2="14" y2="11" />
+                    </svg>
+                  </div>
+                  <span className="gallery__overlay-label">{img.label}</span>
+                </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div className="glightbox" onClick={closeLightbox}>
+          <button className="glightbox__close" onClick={closeLightbox} aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+          </button>
+          <button className="glightbox__nav glightbox__nav--prev" onClick={(e) => { e.stopPropagation(); prevImg(); }} aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+          <div className="glightbox__img" onClick={(e) => e.stopPropagation()}>
+            <Image src={galleryImages[lightbox].src} alt={galleryImages[lightbox].label} fill sizes="90vw" style={{ objectFit: "contain" }} priority />
+            <span className="glightbox__caption">{galleryImages[lightbox].label}</span>
+          </div>
+          <button className="glightbox__nav glightbox__nav--next" onClick={(e) => { e.stopPropagation(); nextImg(); }} aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+          <div className="glightbox__dots">
+            {galleryImages.map((_, i) => (
+              <button key={i} className={`glightbox__dot${i === lightbox ? " active" : ""}`} onClick={(e) => { e.stopPropagation(); setLightbox(i); }} aria-label={`Image ${i + 1}`} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* FOOTER */}
       <footer className="footer">
@@ -663,14 +714,23 @@ export default function LandingPage() {
             <div className="footer__col-item">2 BHK with Private Pool</div>
             <div className="footer__col-item">Possession in approximately 3 Years</div>
             <div className="footer__col-item" style={{ marginTop: 16 }}>FPMJ+953, Kavaranahalli,<br />Karnataka 562101</div>
-            <div className="footer__col-item">
-              <a href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA" target="_blank" rel="noopener noreferrer" className="footer__map-link">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5z"/><circle cx="8" cy="6" r="1.8"/></svg>
-                View on Google Maps
-              </a>
-            </div>
+
           </div>
         </div>
+        {/* Full map embed */}
+        <div className="footer__map">
+          <iframe
+            title="Ganapati AIR Location"
+            src="https://maps.google.com/maps?q=FPMJ%2B953,+Kavaranahalli,+Karnataka+562101&output=embed&z=15"
+            width="100%"
+            height="320"
+            style={{ border: 0, display: "block" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         <div className="footer__bottom">
           <p className="footer__disclaimer">
             All images and projections on this page are illustrative and indicative only.
