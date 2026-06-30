@@ -1836,17 +1836,24 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   flex-shrink: 0;
 }
-.nav__logo-bg img { height: 40px !important; width: auto !important; }
+.nav__logo-bg img { height: 36px !important; width: auto !important; }
 .nav__air-bg {
   background: transparent;
   display: flex;
   align-items: center;
 }
-.nav__air-bg img { height: 52px !important; width: auto !important; }
+.nav__air-bg img { height: 44px !important; width: auto !important; }
 
-/* ================================================================
-   HERO SLIDER — 2 images, slides left every 5s
-   ================================================================ */
+/* Logo visibility on transparent nav (hero) */
+.nav__logo-bg img,
+.nav__air-bg img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.5s ease;
+}
+.nav--scrolled .nav__logo-bg img,
+.nav--scrolled .nav__air-bg img {
+  filter: none;
+}
 .hero__slider {
   position: absolute;
   inset: 0;
