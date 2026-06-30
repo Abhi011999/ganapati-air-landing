@@ -310,6 +310,31 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="location__inner">
 
+            <div className="location__visual reveal">
+              <Image
+                src="/images/project/landscape.jpg"
+                alt="Serene landscape near Ganapati AIR"
+                fill
+                sizes="(max-width:900px) 100vw, 45vw"
+                style={{ objectFit: "cover" }}
+              />
+              <div className="location__visual-overlay">
+                <div className="location__visual-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="13" height="13"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  Kavaranahalli, Karnataka
+                </div>
+                <div className="location__visual-stat">2 km from Isha Foundation</div>
+                <a
+                  href="https://maps.app.goo.gl/9doFd11JoS5UNYbAA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="location__visual-btn"
+                >
+                  View on Google Maps ↗
+                </a>
+              </div>
+            </div>
+
             <div>
               <div className="sec-header">
                 <span className="sec-tag reveal">Location and Connectivity</span>
@@ -691,6 +716,20 @@ export default function LandingPage() {
           </div>
         </div>
       )}
+
+      {/* WHATSAPP FAB */}
+      <a
+        href="https://wa.me/919986574455"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-fab"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.74 5.474 2.035 7.78L.07 31.43a.667.667 0 00.814.847l7.838-2.05A15.933 15.933 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.77-1.856l-.484-.287-4.962 1.3 1.322-4.826-.315-.499A13.247 13.247 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+          <path d="M23.3 19.177c-.397-.199-2.343-1.156-2.707-1.287-.363-.132-.628-.198-.893.199-.264.396-1.023 1.287-1.254 1.552-.231.264-.462.297-.859.099-2.37-1.186-3.927-2.116-5.491-4.797-.415-.714.415-.664 1.187-2.178.132-.264.066-.495-.033-.694-.099-.198-.893-2.149-1.221-2.942-.322-.772-.649-.665-.893-.678-.23-.012-.495-.015-.76-.015-.264 0-.694.099-1.057.495-.364.397-1.387 1.355-1.387 3.307 0 1.952 1.42 3.837 1.618 4.101.199.264 2.795 4.267 6.773 5.985.946.409 1.683.652 2.258.834.949.302 1.813.26 2.495.157.761-.113 2.343-.958 2.674-1.884.33-.925.33-1.718.231-1.884-.099-.165-.363-.264-.76-.463z"/>
+        </svg>
+      </a>
 
       {/* FOOTER */}
       <footer className="footer">
