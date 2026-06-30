@@ -126,7 +126,7 @@ export default function LandingPage() {
             <Image
               src="/air-logo.png"
               alt="Ganapati AIR"
-              width={130} height={56}
+              width={130} height={88}
               style={{ objectFit: "contain", display: "block" }}
             />
           </div>
@@ -736,8 +736,8 @@ export default function LandingPage() {
         <div className="footer__inner">
           <div>
             <div className="footer__brand-logo">
-              <Image src="/ganapati-logo.png" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
-              <Image src="/air-logo.png" alt="Ganapati AIR" width={100} height={36} style={{ objectFit: "contain" }} />
+              <Image src="/ganapati-logo.png" alt="Ganapati Builders" width={64} height={64} style={{ objectFit: "contain", borderRadius: 8 }} />
+              <Image src="/air-logo.png" alt="Ganapati AIR" width={120} height={80} style={{ objectFit: "contain" }} />
             </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>
