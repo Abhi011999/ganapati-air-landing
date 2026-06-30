@@ -126,7 +126,7 @@ export default function LandingPage() {
             <Image
               src="/air-logo.png"
               alt="Ganapati AIR"
-              width={130} height={88}
+              width={72} height={96}
               style={{ objectFit: "contain", display: "block" }}
             />
           </div>
