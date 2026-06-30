@@ -115,7 +115,7 @@ export default function LandingPage() {
         <div className="nav__logo-wrap">
           <div className="nav__logo-bg">
             <Image
-              src="/ganapati-logo.jpg"
+              src="/ganapati-logo.png"
               alt="Ganapati Builders"
               width={36} height={36}
               style={{ objectFit: "contain", borderRadius: 6, flexShrink: 0, display: "block" }}
@@ -124,7 +124,7 @@ export default function LandingPage() {
           <div className="nav__logo-divider" />
           <div className="nav__air-bg">
             <Image
-              src="/air-logo.jpg"
+              src="/air-logo.png"
               alt="Ganapati AIR"
               width={100} height={34}
               style={{ objectFit: "contain", display: "block" }}
@@ -736,8 +736,8 @@ export default function LandingPage() {
         <div className="footer__inner">
           <div>
             <div className="footer__brand-logo">
-              <Image src="/ganapati-logo.jpg" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
-              <Image src="/air-logo.jpg" alt="Ganapati AIR" width={100} height={36} style={{ objectFit: "contain" }} />
+              <Image src="/ganapati-logo.png" alt="Ganapati Builders" width={52} height={52} style={{ objectFit: "contain", borderRadius: 8 }} />
+              <Image src="/air-logo.png" alt="Ganapati AIR" width={100} height={36} style={{ objectFit: "contain" }} />
             </div>
             <div className="footer__brand-name">Ganapati AIR</div>
             <div className="footer__brand-tag">Awakenings in Reflection</div>

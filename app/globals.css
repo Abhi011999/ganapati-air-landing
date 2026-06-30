@@ -1831,7 +1831,7 @@ h1,h2,h3,h4,h5,h6 {
    NAV LOGO CONTAINERS — visible over dark hero
    ================================================================ */
 .nav__logo-bg {
-  background: rgba(255,255,255,0.92);
+  background: transparent;
   border-radius: 7px;
   padding: 4px;
   display: flex;
@@ -1839,7 +1839,7 @@ h1,h2,h3,h4,h5,h6 {
   flex-shrink: 0;
 }
 .nav__air-bg {
-  background: rgba(255,255,255,0.92);
+  background: transparent;
   border-radius: 6px;
   padding: 4px 10px;
   display: flex;
